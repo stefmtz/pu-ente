@@ -1,29 +1,27 @@
-var classUtil = require('classUtil')
+/* Sets behavior of Home Page */
+
+var classUtil = require('classUtil'),
+	routeManager = require('../managers/route-manager')
 ;
 
 var HPController = classUtil.newclass({
 
-	/*menuView: null,
-
 	constructor: function() {
 
-		console.log('MenuController.constructor');
+		console.log('HPController.constructor');
 	},
 
 	init: function(){
 
-		console.log('MenuController.init');
+		console.log('HPController.init');
 
-		this.menuView = new MenuView();
-		this.menuView.init();
+		var s = document.getElementsByClassName("square");
 
-		// RouterMgr.on(Event.ROUTE_CHANGED, $.proxy(this.routeChangedHandler, this));
-	},
-
-	routeChangedHandler: function(e) {
-
-		// this.preloderView.show();
-	}*/
+		for (var i = 0; i < s.length; i++) {
+			s[i].addEventListener("click", routeManager.init(), false); 
+		}
+		
+	}
 });
 
 module.exports = new HPController();
