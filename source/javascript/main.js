@@ -1,3 +1,5 @@
+/* Main Script of the web */
+
 var HPControler	= require('./controllers/homepage-controller')
 ;
 
