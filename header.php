@@ -13,7 +13,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/main.min.js" defer></script>
+<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/main.js" defer></script>
 <?php /*<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/modernizr-latest.js" defer></script>
 <?php if(is_front_page()){ ?>
 <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/index.js" defer></script>
