@@ -1,0 +1,55 @@
+body.page-gallery-category-a {
+	background-color: #FFFFFF;
+	cursor: default;
+}
+
+body.page-gallery-category-z {
+	background-color: #323232;
+}
+
+.page-template-page-gallery #main{
+	/*background-color: lightblue;*/
+}
+
+.project-container{
+	width: 33.33%;
+	float: left;
+	list-style-type: none;
+	padding: 2% 6% 4% 6%;	
+	/*transition: all 1s ease-in-out 1s;*/
+}
+
+.project {
+	max-width: 315px;
+	width: 100%;
+}
+
+@media (max-width: 950px) {
+	.project-container{
+		width: 50%;		
+		padding: 2% 10% 7% 10%;
+	}
+
+}
+
+@media (max-width: 550px) {
+	.project-container{
+		width: 100%;		
+		padding: 2% 25% 18% 25%;
+	}
+
+}
+
+@media (max-width: 450px) {
+	.project-container{
+		padding: 2% 20% 18% 20%;
+	}
+
+}
+
+@media (max-width: 280px) {
+	.project-container{
+		padding: 2% 0 18% 0;
+	}
+
+}

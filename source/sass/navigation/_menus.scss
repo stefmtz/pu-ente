@@ -1,0 +1,139 @@
+.main-navigation {
+	clear: both;
+	display: block;
+	float: left;
+	width: 100%;
+
+	ul {
+		list-style: none;
+		margin: 0;
+		padding-left: 0;
+
+		ul {
+			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+			float: left;
+			position: absolute;
+			top: 1.5em;
+			left: -999em;
+			z-index: 99999;
+
+			ul {
+				left: -999em;
+				top: 0;
+			}
+
+			li {
+				&:hover > ul {
+					left: 100%;
+				}
+			}
+
+			a {
+				width: 200px;
+			}
+
+			:hover > a {
+			}
+
+			a:hover {
+			}
+		}
+
+		li:hover > ul {
+			left: auto;
+		}
+	}
+	li {
+		float: left;
+		position: relative;
+
+		&:hover > a {
+		}
+	}
+	a {
+		display: block;
+		text-decoration: none;
+	}
+
+	.current_page_item > a,
+	.current-menu-item > a,
+	.current_page_ancestor > a {
+	}
+}
+
+/* Small menu. */
+.menu-toggle {
+	display: none;
+}
+
+@media screen and (max-width: 600px) {
+	.menu-toggle,
+	.main-navigation.toggled .nav-menu {
+		display: block;
+	}
+
+	.main-navigation ul {
+		display: none;
+	}
+}
+
+.comment-navigation,
+.posts-navigation,
+.post-navigation {
+
+	.site-main & {
+		margin: 0 0 1.5em;
+		overflow: hidden;
+	}
+
+	& .nav-previous {
+		float: left;
+		width: 50%;
+	}
+
+	& .nav-next {
+		float: right;
+		text-align: right;
+		width: 50%;
+	}
+}
+
+/* pu-ente menu */
+.main-menu {
+	position: fixed;
+	width: 100%;
+}
+
+.square-menu {
+	width: 25px;
+	height: 25px;
+	background-color: #000000;
+	float: left;
+	margin: 70px 0 0 70px;
+}
+
+.square-menu.right {
+	float: right;
+	margin: 70px 70px 0 0;
+}
+
+.cross-menu {
+	float: right;
+	margin: 60px 70px 0 0;
+	font-weight: bolder;
+}
+
+.cross-menu:before {
+	content: '\00d7'; 
+	color: #000000;
+	font-family: 'Graphie-Bold';
+	font-size: 40px;
+}
+
+.single-post .square-menu {
+	background-color: #FFFFFF;
+}
+
+.single-post .cross-menu:before{
+	color: #FFFFFF;
+}

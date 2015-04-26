@@ -1,0 +1,24 @@
+#content {
+	max-width: 1400px;
+	width: 90%;
+	margin: 0 auto;
+}
+
+.content-area{
+	transition: all 0.5s ease-in-out 0s;
+	padding-top: 220px;
+	opacity: 1;	
+}
+
+.preload * {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+}
+
+.disappear {
+	opacity: 0;
+	padding-top: 100px;
+	top: 25% !important;
+}

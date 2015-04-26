@@ -1,0 +1,25 @@
+body.single-post{
+	background-color: #1B1B1B;
+	color: #FFFFFF;
+	font-size: 0.875em;
+}
+
+.post img {
+	margin: 0 0 0 0;
+}
+
+#project-title {
+	float: left;
+	width: 25%;
+	height: 100%;
+}
+
+#project-text {
+	float: left;
+	width: 75%;
+	height: 100%;
+}
+
+#project-text p{
+	padding-bottom: 15px;
+}

@@ -1,0 +1,36 @@
+{
+  "name": "pu-ente",
+  "version": "0.1.0",
+  "description": "pu-ente web",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Estefania Martinez",
+  "license": "ISC",
+  "private": true,
+  "devDependencies": {
+    "browserify": "^9.0.8",
+    "browserify-shim": "^3.8.5",
+    "gulp": "^3.8.11",
+    "gulp-browserify": "^0.5.1",
+    "gulp-concat": "^2.5.2",
+    "gulp-jshint": "^1.10.0",
+    "gulp-plumber": "^1.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.2.0",
+    "gulp-util": "^3.0.4",
+    "jshint-stylish": "^1.0.1"
+  },
+  "browserify": {
+    "transform": [
+      "browserify-shim"
+    ]
+  },
+  "browser": {
+    "classUtil": "../source/scripts/lib/barman/dist/barman.js"
+  },
+  "browserify-shim": {
+    "jquery": "$"
+  }
+}
