@@ -1,12 +1,12 @@
 /* Main Script of the web */
 
-var HPControler	= require('./controllers/homepage-controller')
+var HPController = require('./controllers/homepage-controller')
 ;
 
-var Main = function() {
+var Main = function(){
 
-	HPControler.init();
+	HPController();
 
 };
 
-module.exports = new Main();
+module.exports = Main();

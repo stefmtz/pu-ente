@@ -1,27 +1,16 @@
 /* Sets behavior of Home Page */
-
-var classUtil = require('classUtil'),
-	routeManager = require('../managers/route-manager')
+var	routeManager = require('../managers/route-manager')
 ;
 
-var HPController = classUtil.newclass({
+var HPController = function(){
 
-	constructor: function() {
+	console.log('HPController');
 
-		console.log('HPController.constructor');
-	},
+	var s = document.getElementsByClassName("square");
 
-	init: function(){
-
-		console.log('HPController.init');
-
-		var s = document.getElementsByClassName("square");
-
-		for (var i = 0; i < s.length; i++) {
-			s[i].addEventListener("click", routeManager.init(), false); 
-		}
-		
+	for (var i = 0; i < s.length; i++) {
+		s[i].addEventListener("click", routeManager, false); 
 	}
-});
+};
 
-module.exports = new HPController();
+module.exports = HPController;

@@ -1,42 +1,64 @@
-/* Manage the change of pages */
+ /*Manage the change of pages */
 
-var classUtil = require('classUtil')
-;
+var RouteManager = function(e){
 
-var RouteManager = classUtil.newclass({
+	console.log('RouteManager');
 
-	constructor: function() {
+	function init(e){
+		e.stopPropagation();
 
-		console.log('RouteManager.constructor');
-	},
+		if (history.pushState) {
+			// FADE OUT
+			document.getElementById("primary").className += " disappear";
+			//no es la solucion ideal - REVISAR	
+			document.getElementsByClassName("container-home")[0].className += " disappear";
 
-	init: function(){
-
-		console.log('RouteManager.init');	
-		this.loadPage();
-
-	},
-
-	loadPage: function(href){
-
-		console.log("loadPage");
-		/*var req = new XMLHttpRequest();
-		req.onload = RouteManager.processData;
-		req.open("GET", href , true);
-		req.send();*/
-	},
-
-	processData: function(){
-		/*if (this.status == 200) {
-			newContent = this.responseText;
-			var parser = new DOMParser();
-			var doc = parser.parseFromString(newContent, "text/html");
-
-			document.body = doc.body;
-			document.title = doc.title;
-		}*/
+			history.pushState(e.target.id, "", e.target.id+"/");
+			requestPage(e.target.id+"/");
+		} else {
+			//Backup solution for old browsers.
+			window.location.href = e.target.id+"/";
+		}		
 	}
 
-});
+	function requestPage(href){
+		if (window.XMLHttpRequest){
+			console.log("requestPage");
+			var req = new XMLHttpRequest();
+			req.open("GET", href, true);
+			req.onload = function(e){
+			  if (req.readyState === 4) {
+			    if (req.status === 200) {
 
-module.exports = new RouteManager();
+			    	loadNewPage(req.responseText);
+
+								    
+			    } else {			    
+			      console.error(req.statusText);			    
+			    }
+			  }
+			};
+			req.onerror = function (e) {
+			  console.error(req.statusText);
+			};
+			req.send(null);
+		} else {
+			window.location.href = href;
+		}
+	}
+
+	function loadNewPage(data){
+		console.log("loadNewPage");
+		
+		var parser = new DOMParser();
+		var doc = parser.parseFromString(data, "text/html");
+		console.log(doc);
+		document.body = doc.body;
+		document.title = doc.title;
+
+	}
+
+	init(e);
+};
+
+module.exports = RouteManager;
