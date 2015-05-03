@@ -24,6 +24,11 @@ body.page-gallery-category-z {
 	width: 100%;
 }
 
+.project a:hover{
+   cursor: url('source/images/cursor.jpg'), auto;
+}
+
+
 @media (max-width: 950px) {
 	.project-container{
 		width: 50%;		
