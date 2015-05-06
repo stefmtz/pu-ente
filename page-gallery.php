@@ -13,7 +13,7 @@ get_header(); ?>
 		<?php
 		global $post;
 		$slug = get_post( $post )->post_name;
-		$args = array( 'category_name' => $slug, 'order' => 'ASC' );
+		$args = array( 'numberposts' => 9, 'category_name' => $slug, 'order' => 'ASC' );
 
 		$myposts = get_posts( $args );
 		foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
