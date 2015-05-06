@@ -19,6 +19,18 @@ get_header(); ?>
 		foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
 			<li class="project-container">
 				<div class="project">
+					<div class="project-description">
+						<p><?php the_title(); ?></p>
+						<?php $posttags = get_the_tags();
+							if ($posttags) {
+							  echo "<p>";
+							  foreach($posttags as $tag) {
+							    echo $tag->name . ' '; 
+							  }
+							  echo "</p>";
+							} 
+						?>	
+					</div>
 					<a href="<?php the_permalink(); ?>">
 						<?php the_post_thumbnail( $size, $attr ); ?>
 					</a>
