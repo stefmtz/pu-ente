@@ -31,7 +31,8 @@
 		?>
 >
 <div id="page" class="hfeed site">
-<?php 
+<?php
+
 /* Display Menu */
 if(!is_front_page()){ ?>
 <div id="menu" class="main-menu">
