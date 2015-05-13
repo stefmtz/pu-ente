@@ -39,7 +39,7 @@ if(!is_front_page()){ ?>
 	<div id="menu" class="main-menu">
 		<div id="menuLeft" class="square-menu left"></div>
 	<?php if(is_single()){ ?>
-		<div class="cross-menu"></div>
+		<div id="crossMenu" class="cross-menu"></div>
 	<?php } else { ?>
 		<div id="menuRight" class="square-menu right"></div>
 	<?php } ?>

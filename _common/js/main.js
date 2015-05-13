@@ -22,30 +22,35 @@
 
 	 function MenuController(){
 
-	 	isHP = 0;
-		
-		console.log('MenuController');
+	 	console.log('MenuController');
 
-			var m = document.getElementById("menu");
-			
-			console.log(window.location.href.indexOf("/a/"));
-			if(window.location.href.indexOf("/a/")!=-1){
-				console.log(document.getElementById("menuRight"));
-				
+		var m = document.getElementById("menu"),
+			cat;
+
+		if(window.location.href.indexOf("/a/")!=-1){
+			cat = "a";
+			if(document.getElementById("menuRight")!== null){
 				document.getElementById("menuRight").addEventListener("click", function(e){
-					console.log(e);
 					initRouteManager(e, false, "/z");
 				}, false);
+			}		
 
-			} else if(window.location.href.indexOf("/z/")!=-1){
+		} else if(window.location.href.indexOf("/z/")!=-1){
+			cat = "z";
+			if(document.getElementById("menuLeft")!== null){
 				document.getElementById("menuLeft").addEventListener("click", function(e){
-					console.log(e);
 					initRouteManager(e, false, "/a");
-				}, false);			
-			} else {
-				console.log("error");
-			}
-		
+				}, false);
+			}			
+		} else {
+			console.log("error");
+		}
+
+		if(document.getElementById("crossMenu")!== null){
+			document.getElementById("crossMenu").addEventListener("click", function(e){
+				initRouteManager(e, false, "/"+cat);
+			}, false);
+		}		
 	}
 
 /* ROUTE MANAGER */
