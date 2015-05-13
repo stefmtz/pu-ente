@@ -33,13 +33,13 @@
 				console.log(document.getElementById("menuRight"));
 				
 				document.getElementById("menuRight").addEventListener("click", function(e){
-					console.log(e);
+					console.log(e)
 					initRouteManager(e, false, "/z");
 				}, false);
 
 			} else if(window.location.href.indexOf("/z/")!=-1){
 				document.getElementById("menuLeft").addEventListener("click", function(e){
-					console.log(e);
+					console.log(e)
 					initRouteManager(e, false, "/a");
 				}, false);			
 			} else {

@@ -26,6 +26,6 @@ get_header(); ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
-
+<script type="text/javascript">HPController();</script>
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>
