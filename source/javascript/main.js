@@ -54,18 +54,15 @@
 		console.log("initRouteManager");
 		
 		if (history.pushState) {
-			// FADE OUT
-			document.getElementById("primary").className += " disappear";
 			
 			//no es la solucion ideal - REVISAR	
 			if(isHP===true){
-				document.getElementsByClassName("container-home")[0].className += " disappear";
-				history.pushState(where, "", where+"/");
-				requestPage(where+"/");
+				document.getElementsByClassName("container-home")[0].className += " disappear";	
 			} else {
-				history.pushState(where, "", where+"/");
-				requestPage(where+"/");
+				document.getElementById("primary").className += " disappear";	
 			}
+			history.pushState(where, "", where+"/");
+			requestPage(where+"/");
 			
 			
 		} else {
