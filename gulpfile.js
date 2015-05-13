@@ -21,10 +21,10 @@ gulp.task('watch', function() {
 
 // Concatenate & Minify SASS files
 gulp.task('sass', function () {
-    return gulp.src('source/sass/style.scss')
+    return gulp.src('source/sass/default.scss')
         .pipe(sass())
         .on('error', function (err) { console.log(err.message); })
-        .pipe(gulp.dest('.'))
+        .pipe(gulp.dest('./_common/css/'))
     ;
 });
 
@@ -39,8 +39,8 @@ gulp.task('scripts', function() {
       .pipe(plumber())
       .pipe(jshint())
       .pipe(jshint.reporter('default'))
-      .pipe(browserify(config))
-      .pipe(uglify())
-      .pipe(gulp.dest('js'))
+      /*.pipe(browserify(config))*/
+      //.pipe(uglify())
+      .pipe(gulp.dest('./_common/js/'))
     ;
 });
