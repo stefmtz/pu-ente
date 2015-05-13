@@ -35,10 +35,11 @@ body.page-gallery-category-z {
 	opacity: 1;
 	transition: opacity 0.5s ease-in-out 0s;
 	z-index:2;
+	display: block;
 }
 
 .project a:hover{
-   cursor: url('source/images/cursor.jpg'), auto;
+   cursor: url('_common/images/cursor.jpg'), auto;
 }
 
 .project a:hover > img{
