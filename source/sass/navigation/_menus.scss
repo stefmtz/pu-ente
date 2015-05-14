@@ -119,10 +119,17 @@
 }
 
 .cross-menu {
+	font-weight: bolder;
+	float: left;
+	margin: 60px 0 0 70px;
+}
+
+.cross-menu.right {
 	float: right;
 	margin: 60px 70px 0 0;
-	font-weight: bolder;
 }
+
+
 
 .cross-menu:before {
 	content: '\00d7'; 
