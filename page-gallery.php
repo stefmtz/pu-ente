@@ -8,7 +8,7 @@
 
 get_header(); ?>
 <!-- page-gallery.php -->
-	<div id="primary" class="content-area">
+	<div id="primary" class="content-area gallery">
 		<main id="main" class="site-main clear" role="main">
 		<?php
 		global $post;
@@ -31,7 +31,7 @@ get_header(); ?>
 							} 
 						?>	
 					</div>
-					<a href="<?php the_permalink(); ?>">
+					<a data-href="<?php the_permalink(); ?>"  href="<?php the_permalink(); ?>">
 						<?php the_post_thumbnail( $size, $attr ); ?>
 					</a>
 				</div>
