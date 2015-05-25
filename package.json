@@ -27,9 +27,6 @@
       "browserify-shim"
     ]
   },
-  "browser": {
-    "classUtil": "./source/javascript/lib/barman/dist/barman.js"
-  },
   "browserify-shim": {
     "jquery": "$"
   }
