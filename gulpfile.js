@@ -24,7 +24,7 @@ gulp.task('sass', function () {
     return gulp.src('source/sass/default.scss')
         .pipe(sass())
         .on('error', function (err) { console.log(err.message); })
-        .pipe(gulp.dest('./_common/css/'))
+        .pipe(gulp.dest('./public/css/'))
     ;
 });
 
@@ -32,15 +32,15 @@ gulp.task('sass', function () {
 gulp.task('scripts', function() {
     var config = {
       insertGlobals : false,
-      debug : false
+      debug : true
     };
 
     return gulp.src('source/javascript/main.js')
       .pipe(plumber())
       .pipe(jshint())
       .pipe(jshint.reporter('default'))
-      /*.pipe(browserify(config))*/
+      .pipe(browserify(config))
       //.pipe(uglify())
-      .pipe(gulp.dest('./_common/js/'))
+      .pipe(gulp.dest('./public/js/'))
     ;
 });
