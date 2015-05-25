@@ -1,3 +1,5 @@
+"use strict";
+
 // Gulp packages
 var gulp  = require('gulp'),
     sass = require('gulp-sass'),
