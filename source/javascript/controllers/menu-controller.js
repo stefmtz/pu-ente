@@ -1,5 +1,5 @@
 /* Home Page Controller */
-var routeManager = require('../managers/route-manager');
+var q = require('../managers/route-manager');
 
 
 var menuController = function () {

@@ -1,60 +1,13 @@
 /* Route Manager */
-var pageManager = require('./page-manager');
+//var pageManager = require('../controllers/page-controller');
 
 var routeManager = function () {
-
-	var init = function () {
-		console.log("routeManager init");
-		console.log(pageManager);
-
-	};
-
-	return {
-		init: init
-	};
-
-};
-
-/*var routeManager = pageManager.extend({
-
-	var init = function () {
-		console.log("routeManager init");
-		console.log(pageManager);
-
-		var test = new pageManager();
-
-		console.log(test);
-		
-	};
-
-
-	return {
-		init: init
-	};
-
-});*/
-
-
-module.exports = new routeManager();
-
-
-
-
-/*var routeManager = (function () {
-
-	var init = function () {
-
-		console.log(pageManager);
-
-	};
 
 	var init = function (e, isHP, where) {
 		
 		e.stopPropagation();
 		console.log("routeManager init");
 
-		console.log(pageManager);
-		
 		if (history.pushState) {
 			
 			//no es la solucion ideal - REVISAR	
@@ -64,7 +17,7 @@ module.exports = new routeManager();
 				document.getElementById("primary").className += " disappear";	
 			}
 			history.pushState(where, "", where+"/");
-			//_requestPage(where+"/");
+			_requestPage(where+"/");
 			
 			
 		} else {
@@ -110,6 +63,6 @@ module.exports = new routeManager();
 		init: init
 	};
 
-})();*/
+};
 
-//module.exports = routeManager;
+module.exports = new routeManager();

@@ -1,14 +1,13 @@
 /* Main Script of the web */
 
-var pageManager = require('./managers/page-manager');
+var PageController = require('./controllers/page-controller')
+;
 
 
-var mainApp = function () {
-	console.log("mainApp");
-	//console.log(pageManager);
-	pageManager.init();
-
+var MainApp = function () {
+	console.log("MainApp");
+	PageController.init();
 };
 
-module.exports = new mainApp();
+module.exports = new MainApp();
 
