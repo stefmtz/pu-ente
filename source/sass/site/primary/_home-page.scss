@@ -6,14 +6,13 @@ body, html, p{
 	height: 100%;
 }
 
-body{
-	font: normal 400 1.313em 'Graphie-Regular', sans-serif;	
-	transition: background-color 1s ease-in-out 0s;
-	cursor: pointer;
+body.home{
 	background-color: #1B1B1B;
 }
 
 .container-home{
+	font: normal 400 1.313em 'Graphie-Regular', sans-serif;	
+	cursor: pointer;
 	position: absolute;
 	top: 50%;
 	left: 50%;
