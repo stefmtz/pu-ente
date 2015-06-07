@@ -1,5 +1,6 @@
 .gallery {
 	margin-bottom: 1.5em;
+	position: relative;
 }
 
 .gallery-item {
@@ -7,6 +8,11 @@
 	text-align: center;
 	vertical-align: top;
 	width: 100%;
+	transition: all 1s ease-in-out 1s;
+	opacity: 1;
+	position: absolute;
+
+
 
 	.gallery-columns-2 & {
 		max-width: 50%;
