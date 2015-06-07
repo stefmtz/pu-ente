@@ -1,6 +1,7 @@
 .gallery {
 	margin-bottom: 1.5em;
 	position: relative;
+	padding-bottom:68%;
 }
 
 .gallery-item {
@@ -11,8 +12,7 @@
 	transition: all 1s ease-in-out 1s;
 	opacity: 1;
 	position: absolute;
-
-
+	
 
 	.gallery-columns-2 & {
 		max-width: 50%;
