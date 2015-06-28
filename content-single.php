@@ -31,7 +31,11 @@
 			<div id="project-text">		
 				<?php the_excerpt(); ?>	
 			</div>
-
+			<div class="clear"></div>
+			
+		</div>
+		<div id="related-posts" class="">
+			<?php related_posts(); ?>
 		</div>
 	</div><!-- .entry-content -->
 

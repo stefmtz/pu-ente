@@ -4,6 +4,10 @@ body.single-post{
 	font-size: 0.875em;
 }
 
+.entry-text {
+	margin-bottom: 6%;
+}
+
 .post img {
 	margin: 0 0 2% 0;
 }
@@ -26,5 +30,22 @@ body.single-post{
 
 figure{
 	margin: 0;
+}
+
+/* related posts */
+
+.yarpp-related {
+	margin: 0 !important;
+}
+
+.yarpp-related ol{
+	margin: 0;
+	padding: 0;
+	list-style:none;
+}
+
+.yarpp-related .project-container{
+	margin: 0;
+	font-size: 100%;
 }
 	
