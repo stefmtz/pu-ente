@@ -405,7 +405,8 @@ a {
 /* pu-ente menu */
 .main-menu {
   position: fixed;
-  width: 100%; }
+  width: 100%;
+  z-index: 99; }
 
 .square-menu {
   width: 25px;
@@ -439,6 +440,11 @@ a {
 
 .single-post .cross-menu:before {
   color: #FFFFFF; }
+
+/* post navigation*/
+.pag {
+  float: left;
+  width: 100%; }
 
 /*--------------------------------------------------------------
 6.0 Accessibility
@@ -534,6 +540,10 @@ a {
   opacity: 0;
   padding-top: 100px;
   top: 25% !important; }
+
+.appear {
+  opacity: 100 !important;
+  padding-top: 0 !important; }
 
 .fade-out {
   opacity: 0 !important; }
@@ -715,6 +725,9 @@ body.single-post {
   color: #FFFFFF;
   font-size: 0.875em; }
 
+.entry-text {
+  margin-bottom: 6%; }
+
 .post img {
   margin: 0 0 2% 0; }
 
@@ -733,6 +746,24 @@ body.single-post {
 
 figure {
   margin: 0; }
+
+/* related posts */
+#related-posts {
+  opacity: 0;
+  padding-top: 2%;
+  transition: all 0.5s ease-out 0s; }
+
+.yarpp-related {
+  margin: 0 !important; }
+
+.yarpp-related ol {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+.yarpp-related .project-container {
+  margin: 0;
+  font-size: 100%; }
 
 /*--------------------------------------------------------------
 10.2 Asides
