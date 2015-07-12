@@ -34,7 +34,7 @@
 			<div class="clear"></div>
 			
 		</div>
-		<div id="related-posts" class="">
+		<div id="related-posts" >
 			<?php related_posts(); ?>
 		</div>
 	</div><!-- .entry-content -->

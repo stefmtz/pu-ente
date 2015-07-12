@@ -34,6 +34,12 @@ figure{
 
 /* related posts */
 
+#related-posts{
+	opacity: 0;
+	padding-top: 2%;
+	transition: all 0.5s ease-out 0s;
+}
+
 .yarpp-related {
 	margin: 0 !important;
 }
