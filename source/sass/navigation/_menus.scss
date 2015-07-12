@@ -102,6 +102,7 @@
 .main-menu {
 	position: fixed;
 	width: 100%;
+	z-index: 99;
 }
 
 .square-menu {
@@ -144,4 +145,11 @@
 
 .single-post .cross-menu:before{
 	color: #FFFFFF;
+}
+
+/* post navigation*/
+
+.pag {
+	float: left;
+	width: 100%;
 }
