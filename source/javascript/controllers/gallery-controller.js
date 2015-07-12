@@ -1,4 +1,4 @@
-/* Gallery Controller*/
+/* Photo Gallery Controller*/
 
 var GalleryController = function () {
 

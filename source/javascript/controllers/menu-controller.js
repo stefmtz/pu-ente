@@ -1,4 +1,4 @@
-/* Home Page Controller */
+/* Menu Controller */
 var routeManager = require('../managers/route-manager');
 
 
