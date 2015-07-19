@@ -7,6 +7,7 @@ var ScrollController = function() {
 	var init = function (ele) {
 
 		element = document.getElementById(ele);
+		onScrolling();
 		window.addEventListener("scroll", onScrolling);
 
 	};

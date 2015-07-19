@@ -54,4 +54,13 @@ figure{
 	margin: 0;
 	font-size: 100%;
 }
+
+@media (max-width: 950px) {
+	.yarpp-related .project-container{
+		width: 33.33%;	
+		font-size: 75%;
+		padding: 2% 6% 4% 6%;	
+	}
+
+}
 	
