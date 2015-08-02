@@ -37,7 +37,7 @@ var ScrollController = function() {
 	// STEF: esto tendría que estar en la vista
 	var showElement = function(){
 
-		element.className = element.className + " appear"; 
+		element.className = element.className + " fade-in"; 
 		
 	};
 
