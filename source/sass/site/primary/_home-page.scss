@@ -20,7 +20,12 @@ body.home{
 	height: 414px;
 	margin-top: -207px;
 	margin-left: -414px;
-	transition: all 1s ease-in-out 0s;
+	transition: all 1s ease-in-out 0.5s;
+}
+
+.container-home.fade-out-home {
+	opacity: 0;
+	top: 35% !important; 
 }
 
 .square{

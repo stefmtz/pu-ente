@@ -1,11 +1,17 @@
-/* Menu Controller */
-var routeManager = require('../managers/route-manager');
+/* 
+	Menu Controller
+	-------------- 
+	Gives behavior to Menu elements
+*/
+var pageModel 	= require('../models/page-model'),
+	projectView	= require('../views/project-view')
+;
 
 
-var menuController = function () {
+var MenuController = function () {
 
 	var init = function () {
-		console.log('menuController');
+		console.log('MenuController');
 	
 		var m = document.getElementById("menu"),
 			cat;
@@ -14,7 +20,8 @@ var menuController = function () {
 			cat = "a";
 			if(document.getElementById("menuRight")!== null){
 				document.getElementById("menuRight").addEventListener("click", function(e){
-					routeManager.init(e, false, "/z");
+					projectView.clearTheInterval();
+					pageModel.initNewPage("/z");
 				}, false);
 			}		
 
@@ -22,7 +29,8 @@ var menuController = function () {
 			cat = "z";
 			if(document.getElementById("menuLeft")!== null){
 				document.getElementById("menuLeft").addEventListener("click", function(e){
-					routeManager.init(e, false, "/a");
+					projectView.clearTheInterval();
+					pageModel.initNewPage("/a");
 				}, false);
 			}			
 		} else {
@@ -31,7 +39,10 @@ var menuController = function () {
 
 		if(document.getElementById("crossMenu")!== null){
 			document.getElementById("crossMenu").addEventListener("click", function(e){
-				routeManager.init(e, false, "/"+cat);
+				console.log(projectView);
+
+				projectView.clearTheInterval();
+				pageModel.initNewPage("/"+cat);
 			}, false);
 		}		
 	};
@@ -42,4 +53,4 @@ var menuController = function () {
 
 };
 
-module.exports = new menuController();
+module.exports = new MenuController();

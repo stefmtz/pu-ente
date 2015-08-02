@@ -1,6 +1,11 @@
-/* Photo Gallery Controller*/
+/* 
+	Project View
+	-------------- 
+	Renders View of projects (initializes galleries)
+*/
+var	ScrollController = require('../controllers/scroll-controller');
 
-var GalleryController = function () {
+var ProjectView = function () {
 
 	var _photos = null;
 	var _currentPhoto;
@@ -8,6 +13,8 @@ var GalleryController = function () {
 
 	var init = function () {
 		
+		ScrollController.init("related-posts");
+
 		var galleries = document.getElementsByClassName("gallery");
 
 		for (var i = 0; i < galleries.length; i++) {
@@ -39,11 +46,15 @@ var GalleryController = function () {
 
 	}
 
+	var clearTheInterval = function(){
+		clearInterval(_nIntervId);
+	}
+
 
 	return {
-		init: init
+		init: init,
+		clearTheInterval : clearTheInterval
 	};
-
 };
 
-module.exports = new GalleryController();
+module.exports = new ProjectView();

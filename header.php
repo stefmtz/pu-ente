@@ -47,4 +47,4 @@ if(!is_front_page()){
 	<?php } ?>	
 </div>
 <?php } ?>
-<div id="content" class="site-content">
+<div id="content" class="site-content fade-out">

@@ -1,5 +1,8 @@
-/* Scroll Controller */
-
+/* 
+	Scroll Controller
+	-------------- 
+	Given an element, checks if it is inside the view of the user
+*/
 var ScrollController = function() {
 
 	var element;
@@ -31,6 +34,7 @@ var ScrollController = function() {
 
 	};
 
+	// STEF: esto tendría que estar en la vista
 	var showElement = function(){
 
 		element.className = element.className + " appear"; 

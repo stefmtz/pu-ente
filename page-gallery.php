@@ -41,7 +41,7 @@ get_header(); ?>
 								} 
 							?>	
 						</div>
-						<a data-href="<?php the_permalink(); ?>"  href="<?php the_permalink(); ?>">
+						<a data-href="<?php the_permalink(); ?>"  >
 							<?php the_post_thumbnail( $size, $attr ); ?>
 						</a>
 					</div>
