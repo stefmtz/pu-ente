@@ -522,7 +522,7 @@ a {
 10.0 Content
 --------------------------------------------------------------*/
 body {
-  transition: all 0.5s ease-in-out 1s; }
+  transition: opacity 0.5s ease-in-out 1s; }
 
 #content {
   max-width: 1400px;
