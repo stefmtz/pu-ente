@@ -22,9 +22,8 @@ var PageController = function() {
 		});
 
 		emitter.on("requestNewPage", function(href){
-			//fade out current content
+			//requst new pagee
 			_fadeOutContent();
-			//request new page
 			_requestNewPage(href);
 		});
 
@@ -40,6 +39,7 @@ var PageController = function() {
 	};
 
 	var _requestNewPage = function(href){
+		//fade out current content
 		setTimeout(function(){
 			PageModel.initNewPage(href);
 		}, 1000);

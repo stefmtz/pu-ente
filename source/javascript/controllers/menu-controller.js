@@ -3,8 +3,7 @@
 	-------------- 
 	Gives behavior to Menu elements
 */
-var pageModel 	= require('../models/page-model'),
-	projectView	= require('../views/project-view')
+var projectView	= require('../views/project-view')
 ;
 
 
@@ -21,7 +20,7 @@ var MenuController = function () {
 			if(document.getElementById("menuRight")!== null){
 				document.getElementById("menuRight").addEventListener("click", function(e){
 					projectView.clearTheInterval();
-					pageModel.initNewPage("/z");
+					emitter.emit("requestNewPage", "/z");
 				}, false);
 			}		
 
@@ -30,7 +29,7 @@ var MenuController = function () {
 			if(document.getElementById("menuLeft")!== null){
 				document.getElementById("menuLeft").addEventListener("click", function(e){
 					projectView.clearTheInterval();
-					pageModel.initNewPage("/a");
+					emitter.emit("requestNewPage", "/a");
 				}, false);
 			}			
 		} else {
@@ -42,7 +41,7 @@ var MenuController = function () {
 				console.log(projectView);
 
 				projectView.clearTheInterval();
-				pageModel.initNewPage("/"+cat);
+				emitter.emit("requestNewPage", "/"+cat);
 			}, false);
 		}		
 	};

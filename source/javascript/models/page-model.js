@@ -22,7 +22,7 @@ var PageModel = function () {
 			  if (req.readyState === 4) {
 			    if (req.status === 200) {
 			    	history.pushState(href, "", href);
-					emitter.emit("loadNewPage", req.responseText)								    
+					emitter.emit("loadNewPage", req.responseText);								    
 			    } else {			    
 			      console.error(req.statusText);			    
 			    }
