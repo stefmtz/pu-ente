@@ -7,9 +7,7 @@ var	ScrollController = require('../controllers/scroll-controller');
 
 var ProjectView = function () {
 
-	var _photos = null;
-	var _currentPhoto;
-	var _nIntervId;
+	var _galleries = new Array();
 
 	var init = function () {
 		
@@ -23,31 +21,48 @@ var ProjectView = function () {
 	};
 
 	var _initGallery = function(gallery){
-
-		_photos = document.getElementsByClassName("gallery-item");
-
-		_currentPhoto = _photos.length-1;
-		_nIntervId = setInterval(_fadePhoto, 3000);
+		
+		var gallery = new Gallery(gallery);
+		gallery.init();
+		
 
 	};
 
-	var _fadePhoto = function(){
+	function Gallery(gallery){
 
-		if (_currentPhoto!=0){
-			_photos[_currentPhoto].className = _photos[_currentPhoto].className + " fade-out";
-		} else {
-			/*STEF MEJORAR: se puede mejorar haciendo fade-in primero de la primera foto y luego del resto */	
-			for (var i = 0; i < _photos.length; i++) {
-				_photos[i].className = _photos[i].className.replace(" fade-out", "");
-			};			
+		this.photos = gallery.getElementsByClassName("gallery-item");
+		this.currentPhoto = this.photos.length-1;;
+		this.DOMObject = gallery;
+
+		this.init = function(){
+			_galleries.push(this);
+			var thisGallery = this;
+			this._nIntervId = setInterval(function(){
+				thisGallery._fadePhoto();
+			}, 3000);
+		};
+
+		this._fadePhoto = function(){
+			if (this.currentPhoto!=0){
+				this.photos[this.currentPhoto].className = this.photos[this.currentPhoto].className + " fade-out";
+			} else {
+				//STEF MEJORAR: se puede mejorar haciendo fade-in primero de la primera foto y luego del resto 	
+				for (var i = 0; i < this.photos.length; i++) {
+					this.photos[i].className = this.photos[i].className.replace(" fade-out", "");
+				};
+			}
+
+			this.currentPhoto == 0 ? this.currentPhoto = this.photos.length-1 : this.currentPhoto--;
+
 		}
-
-		_currentPhoto == 0 ? _currentPhoto = _photos.length-1 : _currentPhoto--;
 
 	}
 
 	var clearTheInterval = function(){
-		clearInterval(_nIntervId);
+
+		for (var i = 0; i < _galleries.length; i++) {
+			clearInterval(_galleries[i]._nIntervId);
+		}
 	}
 
 
