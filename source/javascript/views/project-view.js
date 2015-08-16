@@ -11,12 +11,24 @@ var ProjectView = function () {
 
 	var init = function () {
 		
+		//init Scroll controller
 		ScrollController.init("related-posts");
 
+		//init the galleries
 		var galleries = document.getElementsByClassName("gallery");
 
 		for (var i = 0; i < galleries.length; i++) {
 			_initGallery(galleries[i]);
+		}
+
+		//add functionality to related posts
+		var p = document.getElementsByClassName("project");
+
+		for (var i = 0; i < p.length; i++) {
+			p[i].addEventListener("click", function(e){
+				e.stopPropagation();
+				emitter.emit("requestNewPage", e.target.parentNode.getAttribute("data-href"));
+			}); 
 		}
 	};
 
