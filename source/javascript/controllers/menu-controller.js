@@ -20,7 +20,7 @@ var MenuController = function () {
 			if(document.getElementById("menuRight")!== null){
 				document.getElementById("menuRight").addEventListener("click", function(e){
 					projectView.clearTheInterval();
-					emitter.emit("requestNewPage", "/z");
+					emitter.emit("requestNewPage", "/z/");
 				}, false);
 			}		
 
@@ -29,7 +29,7 @@ var MenuController = function () {
 			if(document.getElementById("menuLeft")!== null){
 				document.getElementById("menuLeft").addEventListener("click", function(e){
 					projectView.clearTheInterval();
-					emitter.emit("requestNewPage", "/a");
+					emitter.emit("requestNewPage", "/a/");
 				}, false);
 			}			
 		} else {
@@ -38,10 +38,8 @@ var MenuController = function () {
 
 		if(document.getElementById("crossMenu")!== null){
 			document.getElementById("crossMenu").addEventListener("click", function(e){
-				console.log(projectView);
-
 				projectView.clearTheInterval();
-				emitter.emit("requestNewPage", "/"+cat);
+				emitter.emit("requestNewPage", "/"+cat+"/");
 			}, false);
 		}		
 	};

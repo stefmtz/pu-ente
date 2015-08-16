@@ -6,7 +6,7 @@ var PageModel = function () {
 		console.log("PageModel init");
 
 		if (history.pushState) {			
-			_requestPage(newPage+"/");			
+			_requestPage(newPage);			
 		} else {
 			//Backup solution for old browsers.
 			window.location.href = e.target.id+"/";
