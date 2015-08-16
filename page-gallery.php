@@ -1,7 +1,7 @@
 <?php
 /**
  * Template Name: Gallery
- * The template for displaying the project galleries.
+ * The template for displaying the project galleries A & Z.
  *
  * @package Pu-ente
  */
