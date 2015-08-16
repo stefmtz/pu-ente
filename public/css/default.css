@@ -522,7 +522,8 @@ a {
 10.0 Content
 --------------------------------------------------------------*/
 body {
-  transition: opacity 0.5s ease-in-out 1s; }
+  transition: opacity 0.5s ease-in-out 1s;
+  transition: background-color 0.5s ease-in-out 0s; }
 
 #content {
   max-width: 1400px;
@@ -701,7 +702,7 @@ body.page-gallery-category-z {
 .project a img {
   position: relative;
   opacity: 1;
-  transition: opacity 0.5s ease-in-out 0s;
+  transition: opacity 0.3s ease-in;
   z-index: 2;
   display: block; }
 
