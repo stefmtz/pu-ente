@@ -8,7 +8,7 @@
 
 get_header(); ?>
 <!-- page-gallery.php -->
-	<div id="primary" class="content-area page-gallery">
+	<div id="primary" class="content-area page-gallery fade-out">
 		<main id="main" class="site-main clear" role="main">
 		<?php
 			global $post;

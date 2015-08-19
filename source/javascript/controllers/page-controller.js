@@ -65,14 +65,18 @@ var PageController = function() {
 
 	var _fadeOutContent = function(){
 		setTimeout(function(){
-			document.getElementById("primary").className += " fade-out";	
+			document.getElementById("primary").className = document.getElementById("primary").className.replace("fade-in-page", 'fade-out-page');				
 		}, 500);
+
+		setTimeout(_scrollToTop, 1500);
+
+		
 
 	};
 
 	var _fadeInContent = function(){
 		setTimeout(function(){
-			document.getElementById("content").className = document.getElementById("content").className.replace("fade-out", 'fade-in');
+			document.getElementById("primary").className = document.getElementById("primary").className.replace("fade-out", 'fade-in-page');
 		}, 500);
 	};
 
@@ -91,6 +95,10 @@ var PageController = function() {
 
 		_setViews();
 
+	};
+
+	var _scrollToTop = function(){
+		window.scrollTo(0, 0);
 	};
 
 
