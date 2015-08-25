@@ -9,37 +9,51 @@ var projectView	= require('../views/project-view')
 
 var MenuController = function () {
 
+	var prod = "/_test";
+	//var prod = "";
+
 	var init = function () {
 		console.log('MenuController');
 	
 		var m = document.getElementById("menu"),
-			cat;
+			cat, newPage;
 
 		if(window.location.href.indexOf("/a/")!=-1){
 			cat = "a";
 			if(document.getElementById("menuRight")!== null){
 				document.getElementById("menuRight").addEventListener("click", function(e){
 					projectView.clearTheInterval();
-					emitter.emit("requestNewPage", "/z/");
+					emitter.emit("requestNewPage", prod+"/z/");
 				}, false);
-			}		
+			}
+			if(document.getElementById("menuLeft")!== null){
+				document.getElementById("menuLeft").addEventListener("click", function(e){
+					projectView.clearTheInterval();
+					emitter.emit("requestNewPage", prod+"/contacto/");
+				}, false);
+			}			
 
 		} else if(window.location.href.indexOf("/z/")!=-1){
 			cat = "z";
 			if(document.getElementById("menuLeft")!== null){
 				document.getElementById("menuLeft").addEventListener("click", function(e){
 					projectView.clearTheInterval();
-					emitter.emit("requestNewPage", "/a/");
+					emitter.emit("requestNewPage", prod+"/a/");
 				}, false);
-			}			
-		} else {
-			console.log("error");
+			}
+			if(document.getElementById("menuRight")!== null){
+				document.getElementById("menuRight").addEventListener("click", function(e){
+					projectView.clearTheInterval();
+					emitter.emit("requestNewPage", prod+"/contacto/");
+				}, false);
+			}	
 		}
 
 		if(document.getElementById("crossMenu")!== null){
 			document.getElementById("crossMenu").addEventListener("click", function(e){
 				projectView.clearTheInterval();
-				emitter.emit("requestNewPage", "/"+cat+"/");
+				typeof(cat) == "undefined" ? cat="a" : cat=cat;
+				emitter.emit("requestNewPage", prod+"/"+cat+"/");
 			}, false);
 		}		
 	};

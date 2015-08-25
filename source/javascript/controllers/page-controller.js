@@ -70,8 +70,6 @@ var PageController = function() {
 
 		setTimeout(_scrollToTop, 1500);
 
-		
-
 	};
 
 	var _fadeInContent = function(){

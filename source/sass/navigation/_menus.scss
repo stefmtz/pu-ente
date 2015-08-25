@@ -140,11 +140,11 @@
 	font-size: 40px;
 }
 
-.single-post .square-menu {
+.single-post .square-menu, .page-template-page-contact .square-menu {
 	background-color: #FFFFFF;
 }
 
-.single-post .cross-menu:before{
+.single-post .cross-menu:before, .page-template-page-contact .cross-menu:before{
 	color: #FFFFFF;
 }
 

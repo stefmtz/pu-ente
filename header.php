@@ -40,7 +40,8 @@ if(!is_front_page()){
 	<?php } else {  ?>
 		<div id="menuLeft" class="square-menu left"></div>
 	<?php } ?>
-	<?php if(is_single() && $category=="a"){ ?>
+	
+	<?php if((is_single() && $category=="a") || (is_page("contacto"))) { ?>
 		<div id="crossMenu" class="cross-menu right"></div>
 	<?php } else {  ?>
 		<div id="menuRight" class="square-menu right"></div>
