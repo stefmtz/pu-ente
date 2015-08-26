@@ -34,6 +34,10 @@ figure{
 
 /* pagination menu */
 
+#pagination-menu {
+	margin-bottom: 25%;
+}
+
 #pagination-menu ul{
 	margin: 0;
 	padding: 0;
@@ -55,11 +59,11 @@ figure{
 }
 
 #square-next {
-	float:right;
+	float:left;
 }
 
 #square-previous {
-	float:left;
+	float:right;
 }
 
 #scroll-up{
@@ -70,7 +74,7 @@ figure{
 
 #related-posts{
 	opacity: 0;
-	padding-top: 15%;
+	/* margin-top: 20%; */
 	transition: all 0.5s ease-out 0s;
 }
 
@@ -93,7 +97,7 @@ figure{
 	.yarpp-related .project-container{
 		width: 33.33%;	
 		font-size: 75%;
-		padding: 2% 6% 4% 6%;	
+		margin: 2% 6% 4% 6%;	
 	}
 
 }
