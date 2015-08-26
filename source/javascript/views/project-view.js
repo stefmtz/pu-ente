@@ -82,17 +82,25 @@ var ProjectView = function () {
 
 		var target;
 
-		document.getElementById("square-previous").addEventListener("click", function(e){
-			clearTheInterval();	
-			target = _findAncestror(e.target, "clickable-square");
-			emitter.emit("requestNewPage", target.getAttribute("data-href"));	
-		}, false);
+		if (document.contains(document.getElementById("square-previous"))) {
 
-		document.getElementById("square-next").addEventListener("click", function(e){
-			clearTheInterval();			
-			target = _findAncestror(e.target, "clickable-square");
-			emitter.emit("requestNewPage", target.getAttribute("data-href"));		
-		}, false);
+			document.getElementById("square-previous").addEventListener("click", function(e){
+				clearTheInterval();	
+				target = _findAncestror(e.target, "clickable-square");
+				emitter.emit("requestNewPage", target.getAttribute("data-href"));	
+			}, false);
+
+		}
+
+		if (document.contains(document.getElementById("square-next"))) {
+
+			document.getElementById("square-next").addEventListener("click", function(e){
+				clearTheInterval();			
+				target = _findAncestror(e.target, "clickable-square");
+				emitter.emit("requestNewPage", target.getAttribute("data-href"));		
+			}, false);
+
+		}
 
 		document.getElementById("scroll-up").addEventListener("click", function(e){
 			//STEF move to functions
