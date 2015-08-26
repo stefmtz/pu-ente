@@ -95,7 +95,14 @@ var ProjectView = function () {
 		}, false);
 
 		document.getElementById("scroll-up").addEventListener("click", function(e){
-			window.scrollTo(0, 0);			
+			//STEF move to functions
+			(function smoothscroll(){
+			    var currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
+			    if (currentScroll > 0) {
+			         window.requestAnimationFrame(smoothscroll);
+			         window.scrollTo (0,currentScroll - (currentScroll/25));
+			    }
+			})();			
 		}, false);
 
 	}
