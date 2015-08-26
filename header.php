@@ -18,34 +18,43 @@
 <?php wp_head(); ?>
 </head>
 
-<body <?php if(is_page_template("page-gallery.php")){ 
+<body <?php 
+			if(is_page_template("page-gallery.php")){ 
 				global $post;
 				$slug = get_post( $post )->post_name;
-
 				body_class("page-gallery-category-".$slug); 
-			} else { body_class();  } 
+			} else if(!is_front_page()){ 
+				$category = get_the_category();
+				$category = $category[0]->cat_name;
+				body_class("category-".$category);  
+			} else {
+				body_class();
+			}
 		?>
 >
 <div id="page" class="hfeed site">
 <?php
-
 /* Display Menu */
 if(!is_front_page()){ 
-	$category = get_the_category();
-	$category = $category[0]->cat_name;
 ?>
 <div id="menu" class="main-menu">
+
 	<?php if(is_single() && $category=="z"){ ?>
-		<div id="crossMenu" class="cross-menu left"></div>
+		<div id="crossMenu" class="cross-menu left"></div> 
 	<?php } else {  ?>
-		<div id="menuLeft" class="square-menu left"></div>
+		<div id="menuLeft" class="square-menu left"></div> 
 	<?php } ?>
 	
-	<?php if((is_single() && $category=="a") || (is_page("contacto"))) { ?>
-		<div id="crossMenu" class="cross-menu right"></div>
+	<?php if(is_single() && $category=="a") { ?>
+		<div id="crossMenu" class="cross-menu right"></div> 
 	<?php } else {  ?>
-		<div id="menuRight" class="square-menu right"></div>
+		<div id="menuRight" class="square-menu right"></div> 
 	<?php } ?>	
+
+	<?php /*if(is_page("contacto")) { ?>
+		<div id="crossMenu" class="cross-menu right"></div>
+		<div id="menuRight" class="square-menu right"></div>
+	<?php } */?>
 </div>
 <?php } ?>
 <div id="content" class="site-content">
