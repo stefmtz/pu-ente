@@ -9,10 +9,12 @@ var ProjectView = function () {
 
 	var _galleries = new Array();
 
-	var init = function () {
-		
+	var init = function () {		
 		//init Scroll controller
 		ScrollController.init("related-posts");
+
+		//init Pagination Menu
+		_paginationMenu(); 
 
 		//init the galleries
 		var galleries = document.getElementsByClassName("gallery");
@@ -32,12 +34,9 @@ var ProjectView = function () {
 		}
 	};
 
-	var _initGallery = function(gallery){
-		
+	var _initGallery = function(gallery){		
 		var gallery = new Gallery(gallery);
 		gallery.init();
-		
-
 	};
 
 	function Gallery(gallery){
@@ -63,18 +62,42 @@ var ProjectView = function () {
 					this.photos[i].className = this.photos[i].className.replace(" fade-out", "");
 				};
 			}
-
 			this.currentPhoto == 0 ? this.currentPhoto = this.photos.length-1 : this.currentPhoto--;
-
 		}
-
 	}
 
 	var clearTheInterval = function(){
-
 		for (var i = 0; i < _galleries.length; i++) {
 			clearInterval(_galleries[i]._nIntervId);
 		}
+	}
+
+	//STEF: move to functions
+	var _findAncestror = function(el, cls){
+		while ((el = el.parentElement) && !el.classList.contains(cls));
+		return el;		
+	}
+
+	var _paginationMenu = function(){
+
+		var target;
+
+		document.getElementById("square-previous").addEventListener("click", function(e){
+			clearTheInterval();	
+			target = _findAncestror(e.target, "clickable-square");
+			emitter.emit("requestNewPage", target.getAttribute("data-href"));	
+		}, false);
+
+		document.getElementById("square-next").addEventListener("click", function(e){
+			clearTheInterval();			
+			target = _findAncestror(e.target, "clickable-square");
+			emitter.emit("requestNewPage", target.getAttribute("data-href"));		
+		}, false);
+
+		document.getElementById("scroll-up").addEventListener("click", function(e){
+			window.scrollTo(0, 0);			
+		}, false);
+
 	}
 
 
