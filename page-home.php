@@ -12,12 +12,12 @@ get_header(); ?>
 
 
 			<div class="container-home">
-				<div id="squareuno" class="uno square mid">
+				<div id="squareuno" class="square uno">
 					<div class="text">
 						<p id="a">a</p>
 					</div>
 				</div>
-				<div class="dos square light">
+				<div class="square dos">
 					<div class="text">				
 						<p id="z">z</p>
 					</div>
