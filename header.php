@@ -32,6 +32,16 @@
 			}
 		?>
 >
+
+<?php
+$localized_url = WPGlobus_Utils::localize_url( $url, $language );
+$localized__current_url = WPGlobus_Utils::localize_current_url( $language );
+
+echo $language;
+echo $localize_url;
+echo $localized__current_url;
+
+ ?>
 <div id="page" class="hfeed site">
 <?php
 /* Display Menu */
@@ -51,7 +61,7 @@ if(!is_front_page()){
 		<div id="menuRight" class="square-menu right"></div> 
 	<?php } ?>	
 
-	<?php /*if(is_page("contacto")) { ?>
+	<?php /*if(is_page("pu-ente")) { ?>
 		<div id="crossMenu" class="cross-menu right"></div>
 		<div id="menuRight" class="square-menu right"></div>
 	<?php } */?>

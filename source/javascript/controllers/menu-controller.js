@@ -26,7 +26,7 @@ var MenuController = function () {
 				if(window.location.href.indexOf("/a/")!=-1){
 					emitter.emit("requestNewPage", prod+"/z/");
 				} else {
-					emitter.emit("requestNewPage", prod+"/contacto/");
+					emitter.emit("requestNewPage", prod+"/pu-ente/");
 				}			
 			}, false);
 		}
@@ -35,7 +35,7 @@ var MenuController = function () {
 				document.getElementById("menuLeft").addEventListener("click", function(e){
 					projectView.clearTheInterval();
 					if(window.location.href.indexOf("/a/")!=-1){
-						emitter.emit("requestNewPage", prod+"/contacto/");
+						emitter.emit("requestNewPage", prod+"/pu-ente/");
 					} else {
 						emitter.emit("requestNewPage", prod+"/a/");
 					}
