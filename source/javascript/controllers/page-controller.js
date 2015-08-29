@@ -23,13 +23,16 @@ var PageController = function() {
 
 		emitter.on("requestNewPage", function(href){
 			//request new page
-			console.log("-->requestNewPage");
 			_fadeOutContent();
 			_requestNewPage(href);
 		});
 
+		emitter.on("requestSubMenu", function(href){
+			//request new page
+			console.log("-->requestSubMenu");
+		});
+
 		emitter.on("homeRequestNewPage", function(e){
-			console.log(e);
 			//fade out current content
 			HomepageView.fadeOut();
 			//request new page
@@ -38,7 +41,6 @@ var PageController = function() {
 		});
 
 		window.addEventListener('popstate', function(event) {
-		  	console.log("-->back button");
 		 	_fadeOutContent();
 			setTimeout(function(){
 				PageModel.initNewPage(event.state, false);
@@ -74,7 +76,7 @@ var PageController = function() {
 
 	var _fadeOutContent = function(){
 		setTimeout(function(){
-			document.getElementById("primary").className = document.getElementById("primary").className.replace("fade-in-page", 'fade-out-page');				
+			document.getElementById("primary").className = document.getElementById("primary").className.replace("fade-in-page", 'fade-out-page');
 		}, 500);
 
 		setTimeout(_scrollToTop, 1500);

@@ -3,7 +3,8 @@
 	-------------- 
 	Gives behavior to Menu elements
 */
-var projectView	= require('../views/project-view')
+var projectView	= require('../views/project-view'),
+	menuView = require('../views/menu-view')
 ;
 
 
@@ -15,7 +16,14 @@ var MenuController = function () {
 
 	var init = function () {
 		console.log('MenuController');
-	
+
+		_initMainMenu();
+		_initSubMenu();
+
+	};
+
+	var _initMainMenu = function(){
+
 		var m = document.getElementById("menu");
 
 		cat = _getCat();
@@ -26,7 +34,7 @@ var MenuController = function () {
 				if(window.location.href.indexOf("/a/")!=-1){
 					emitter.emit("requestNewPage", prod+"/z/");
 				} else {
-					emitter.emit("requestNewPage", prod+"/pu-ente/");
+					menuView.showSubMenu();
 				}			
 			}, false);
 		}
@@ -35,7 +43,7 @@ var MenuController = function () {
 				document.getElementById("menuLeft").addEventListener("click", function(e){
 					projectView.clearTheInterval();
 					if(window.location.href.indexOf("/a/")!=-1){
-						emitter.emit("requestNewPage", prod+"/pu-ente/");
+						menuView.showSubMenu();
 					} else {
 						emitter.emit("requestNewPage", prod+"/a/");
 					}
@@ -49,7 +57,28 @@ var MenuController = function () {
 			}, false);
 		}
 
-	};
+	}
+
+	var _initSubMenu = function(){
+
+		var ul = document.getElementById("sub-sections");
+		var lis = ul.getElementsByTagName("li");
+		var overlay = document.getElementById("overlay");
+
+		for (var i = 0; i < lis.length; i++) {
+			lis[i].addEventListener("click", function(e){
+				e.stopPropagation();
+				menuView.hideSubMenu(false);
+				emitter.emit("requestNewPage", e.target.getAttribute("data-href"));
+			}); 
+		}
+
+		overlay.addEventListener("click", function(e){
+			menuView.hideSubMenu(true);
+		});
+
+
+	}
 
 	function _getCat(){
 		var ret = "";

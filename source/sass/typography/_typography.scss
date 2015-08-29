@@ -6,8 +6,10 @@ input,
 select,
 textarea {
 	color: $color__text-main;
+	/* STEF: delete?
 	font-family: $font__main;
 	@include font-size(1);
+	*/
 	line-height: $font__line-height-body;
 	font: normal 400 1.313em 'Graphie-Regular', sans-serif;	
 }

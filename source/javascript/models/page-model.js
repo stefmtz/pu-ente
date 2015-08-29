@@ -22,8 +22,6 @@ var PageModel = function () {
 	var _requestPage = function requestPage(href, nuevo){
 		if (window.XMLHttpRequest){
 			console.log("_requestPage");
-			console.log(href);
-			console.log(nuevo);
 			var req = new XMLHttpRequest();
 			req.open("GET", href, true);
 			req.onload = function(e){
