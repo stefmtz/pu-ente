@@ -22,24 +22,33 @@ var PageController = function() {
 		});
 
 		emitter.on("requestNewPage", function(href){
-			//requst new pagee
+			//request new page
+			console.log("-->requestNewPage");
 			_fadeOutContent();
 			_requestNewPage(href);
 		});
 
 		emitter.on("homeRequestNewPage", function(e){
+			console.log(e);
 			//fade out current content
 			HomepageView.fadeOut();
 			//request new page
-			_requestNewPage(e.target.id);
+			_requestNewPage(e.target.id+"/", true);
 			
+		});
+
+		window.addEventListener('popstate', function(event) {
+		  	console.log("-->back button");
+		 	_fadeOutContent();
+			setTimeout(function(){
+				PageModel.initNewPage(event.state, false);
+			}, 1000);  
 		});
 
 		_setViews();
 	};
 
 	var _requestNewPage = function(href){
-		//fade out current content
 		setTimeout(function(){
 			PageModel.initNewPage(href);
 		}, 1000);
