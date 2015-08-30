@@ -10,13 +10,14 @@ var projectView	= require('../views/project-view'),
 
 var MenuController = function () {
 
-	//var prod = "/_test";
-	var prod = "";
+	var prod = "/_test";
+	//var prod = "";
 	var cat;
 
 	var init = function () {
 		console.log('MenuController');
 
+		menuView.initSubMenu();
 		_initMainMenu();
 		_initSubMenu();
 
@@ -69,7 +70,7 @@ var MenuController = function () {
 			lis[i].addEventListener("click", function(e){
 				e.stopPropagation();
 				menuView.hideSubMenu(false);
-				emitter.emit("requestNewPage", e.target.getAttribute("data-href"));
+				emitter.emit("requestNewPage", prod+e.target.getAttribute("data-href"));
 			}); 
 		}
 

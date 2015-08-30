@@ -8,17 +8,17 @@ var MenuView = function () {
 	
 	var o, s;
 
-	var init = function () {
+	var initSubMenu = function () {
 		
-		console.log("MenuView init")
+		console.log("initSubMenu")
+		o = document.getElementById("overlay");
+		s = document.getElementById("sub-menu");
+
 						
 	};
 
 	var showSubMenu = function () {
 		
-		o = document.getElementById("overlay");
-		s = document.getElementById("sub-menu");
-
 		o.style.visibility = "visible";
 
 		o.className = o.className + " fade-in";
@@ -27,7 +27,6 @@ var MenuView = function () {
 	}
 
 	var hideSubMenu = function (visibilityHidden) {
-		console.log(visibilityHidden);
 		s.className = s.className.replace("fade-in", "fade-out");
 		if(visibilityHidden===true){
 			o.className = o.className.replace("fade-in", "fade-out");
@@ -37,6 +36,7 @@ var MenuView = function () {
 
 
 	return {
+		initSubMenu: initSubMenu,
 		showSubMenu: showSubMenu,
 		hideSubMenu: hideSubMenu
 	};
