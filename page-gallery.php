@@ -48,7 +48,7 @@ get_header(); ?>
 				</li>
 			<?php endwhile; ?>
 
-			<div class="pag">
+			<div id="gallery-pagination">
 				<?php echo get_next_posts_link( '>>', $the_query->max_num_pages ); 
 				previous_posts_link( '<<' );?>
 			</div>

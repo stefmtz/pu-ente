@@ -3,11 +3,15 @@
 	-------------- 
 	Renders View of projects List (A-Z galleries)
 */
+var	ScrollController = require('../controllers/scroll-controller');
+
 
 var GalleryView = function () {
 
 	
 	var init = function () {
+		
+		ScrollController.init("gallery-pagination");
 		
 		var p = document.getElementsByClassName("project");
 
@@ -16,8 +20,7 @@ var GalleryView = function () {
 				e.stopPropagation();
 				emitter.emit("requestNewPage", e.target.parentNode.getAttribute("data-href"));
 			}); 
-		}
-				
+		}				
 	};
 
 
