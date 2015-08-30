@@ -12,10 +12,12 @@ var MenuController = function () {
 
 	var prod = "/_test";
 	//var prod = "";
-	var cat;
+	var cat, lang;
 
 	var init = function () {
 		console.log('MenuController');
+
+		WPGlobus.language != "es" ? lang = "/"+WPGlobus.language : lang=""; 
 
 		menuView.initSubMenu();
 		_initMainMenu();
@@ -33,7 +35,7 @@ var MenuController = function () {
 			document.getElementById("menuRight").addEventListener("click", function(e){
 				projectView.clearTheInterval();
 				if(window.location.href.indexOf("/a/")!=-1){
-					emitter.emit("requestNewPage", prod+"/z/");
+					emitter.emit("requestNewPage", prod+lang+"/z/");
 				} else {
 					menuView.showSubMenu();
 				}			
@@ -46,15 +48,17 @@ var MenuController = function () {
 					if(window.location.href.indexOf("/a/")!=-1){
 						menuView.showSubMenu();
 					} else {
-						emitter.emit("requestNewPage", prod+"/a/");
+						emitter.emit("requestNewPage", prod+lang+"/a/");
 					}
 				}, false);
 		}	
 
 		if(document.getElementById("crossMenu")!== null){
+			console.log("crossMenu");
 			document.getElementById("crossMenu").addEventListener("click", function(e){
 				projectView.clearTheInterval();
-				emitter.emit("requestNewPage", prod+"/"+cat+"/");
+				console.log(prod+lang+"/"+cat+"/");
+				emitter.emit("requestNewPage", prod+lang+"/"+cat+"/");
 			}, false);
 		}
 
@@ -70,7 +74,7 @@ var MenuController = function () {
 			lis[i].addEventListener("click", function(e){
 				e.stopPropagation();
 				menuView.hideSubMenu(false);
-				emitter.emit("requestNewPage", prod+e.target.getAttribute("data-href"));
+				emitter.emit("requestNewPage", prod+lang+e.target.getAttribute("data-href"));
 			}); 
 		}
 

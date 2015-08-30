@@ -12,7 +12,7 @@ var MenuView = function () {
 		
 		console.log("initSubMenu")
 		o = document.getElementById("overlay");
-		s = document.getElementById("sub-menu");
+		s = document.getElementById("submenu");
 
 						
 	};
@@ -20,6 +20,7 @@ var MenuView = function () {
 	var showSubMenu = function () {
 		
 		o.style.visibility = "visible";
+		s.style.visibility = "visible";
 
 		o.className = o.className + " fade-in";
 		s.className = s.className + " fade-in"; 	
@@ -30,7 +31,8 @@ var MenuView = function () {
 		s.className = s.className.replace("fade-in", "fade-out");
 		if(visibilityHidden===true){
 			o.className = o.className.replace("fade-in", "fade-out");
-			o.style.visibility = "hidden";	
+			o.style.visibility = "hidden";
+			s.style.visibility = "hidden";	
 		}
 	}
 

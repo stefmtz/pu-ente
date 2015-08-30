@@ -8,8 +8,12 @@ var	ScrollController = require('../controllers/scroll-controller');
 var ProjectView = function () {
 
 	var _galleries = new Array();
+	var lang;
 
-	var init = function () {		
+	var init = function () {
+
+		WPGlobus.language != "es" ? lang = WPGlobus.language : lang=""; 
+
 		//init Scroll controller
 		ScrollController.init("related-posts");
 
@@ -29,7 +33,7 @@ var ProjectView = function () {
 		for (var i = 0; i < p.length; i++) {
 			p[i].addEventListener("click", function(e){
 				e.stopPropagation();
-				emitter.emit("requestNewPage", e.target.parentNode.getAttribute("data-href"));
+				emitter.emit("requestNewPage", lang+e.target.parentNode.getAttribute("data-href"));
 			}); 
 		}
 	};
