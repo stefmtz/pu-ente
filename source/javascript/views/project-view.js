@@ -48,13 +48,16 @@ var ProjectView = function () {
 		this.photos = gallery.getElementsByClassName("gallery-item");
 		this.currentPhoto = this.photos.length-1;;
 		this.DOMObject = gallery;
+		this.time = gallery.getAttribute("data-time");
+
+		this.time == undefined ? this.time = 2000 : this.time = this.time*1000;
 
 		this.init = function(){
 			_galleries.push(this);
 			var thisGallery = this;
 			this._nIntervId = setInterval(function(){
 				thisGallery._fadePhoto();
-			}, 3000);
+			}, this.time);
 		};
 
 		this._fadePhoto = function(){

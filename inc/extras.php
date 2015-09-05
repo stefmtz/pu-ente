@@ -78,7 +78,7 @@ function pu_ente_addCustomGallerySettings() {
 <script type="text/html" id="tmpl-my-custom-gallery-setting">
     <label class="setting">
       <span><?php _e('Time'); ?></span>
-      <input type="text" value="" data-setting="time" style="float:left;" >
+      <input type="text" value="2" data-setting="time" style="float:left;" >
     </label>
   </script>
 
@@ -89,7 +89,7 @@ function pu_ente_addCustomGallerySettings() {
       // add your shortcode attribute and its default value to the
       // gallery settings list; $.extend should work as well...
       _.extend(wp.media.gallery.defaults, {
-        time: ''
+        time: 2
       });
 
       // merge default gallery settings template with yours
@@ -192,7 +192,7 @@ function pu_ente_gallery_shortcode( $attr ) {
 		'include'    => '',
 		'exclude'    => '',
 		'link'       => '',
-		'time'       => ''
+		'time'       => 2
 	), $attr, 'gallery' );
 
 	$id = intval( $atts['id'] );
@@ -278,7 +278,7 @@ function pu_ente_gallery_shortcode( $attr ) {
 	}
 
 	$size_class = sanitize_html_class( $atts['size'] );
-	$gallery_div = "<div id='$selector' class='gallery galleryid-{$id} gallery-columns-{$columns} gallery-size-{$size_class} gallery-time-{$time}'>";
+	$gallery_div = "<div id='$selector' class='gallery galleryid-{$id} gallery-columns-{$columns} gallery-size-{$size_class}' data-time='{$time}'>";
 
 	/**
 	 * Filter the default gallery shortcode CSS styles.
