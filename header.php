@@ -6,7 +6,8 @@
  *
  * @package Pu-ente
  */
-?><!DOCTYPE html>
+?>
+<!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
@@ -21,25 +22,20 @@
 <body <?php 
 			if(is_page_template("page-gallery.php")){ 
 				global $post;
-				$slug = get_post( $post )->post_name;
-				body_class("page-gallery-category-".$slug); 
+				$category = get_post( $post )->post_name;
+				body_class(["page-gallery-".$category, "category-".$category]); 
 			} else if(!is_front_page()){ 
 				$category = get_the_category();
 				$category = $category[0]->cat_name;
-				body_class("category-".$category);  
+				body_class("category-".$category); 
 			} else {
 				body_class();
 			}
 		?>
 >
-
-<?php
-$localized_url = WPGlobus_Utils::localize_url( $url, $language );
-$localized__current_url = WPGlobus_Utils::localize_current_url( $language );
-
-?>
 <div id="page" class="hfeed site">
 <?php
+
 /* Display Menu */
 if(!is_front_page()){ 
 ?>
@@ -47,22 +43,16 @@ if(!is_front_page()){
 
 	<?php if(is_single() && $category=="z"){ ?>
 		<div id="crossMenu" class="cross-menu left"></div> 
-	<?php } else {  ?>
+	<?php } else if(!is_page("pu-ente")) {  ?>
 		<div id="menuLeft" class="square-menu left"></div> 
 	<?php } ?>
 	
-	<?php if(is_single() && $category=="a") { ?>
+	<?php if(is_single() && $category=="a" ) { ?>
 		<div id="crossMenu" class="cross-menu right"></div> 
-	<?php } else {  ?>
+	<?php } else if(!is_page("pu-ente")) {  ?>
 		<div id="menuRight" class="square-menu right"></div> 
 	<?php } ?>	
-
-	<?php 
-		/*if(is_page("pu-ente")) { ?>
-			<div id="crossMenu" class="cross-menu right"></div>
-			<div id="menuRight" class="square-menu right"></div>
-		<?php } */
-	?>
-</div>
+	</div>
 <?php } ?>
+
 <div id="content" class="site-content">

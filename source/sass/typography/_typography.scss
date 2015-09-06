@@ -11,7 +11,7 @@ textarea {
 	@include font-size(1);
 	*/
 	line-height: $font__line-height-body;
-	font: normal 400 1.313em 'Graphie-Regular', sans-serif;	
+	font: normal 400 1em 'Graphie-Regular', sans-serif;	
 }
 
 @import "headings";

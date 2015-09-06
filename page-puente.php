@@ -1,14 +1,14 @@
 <?php
 /**
- * Template Name: Contact
+ * Template Name: Pu-ente
  * Template for displaying Contact content.
  *
  * @package Pu-ente
  */
 
 get_header(); ?>
-<!-- page-contact.php -->
-	<div id="primary" class="content-area page-contact fade-out">
+<!-- page-puente.php -->
+	<div id="primary" class="content-area page-puente fade-out">
 		<main id="main" class="site-main clear" role="main">
 			<?php while ( have_posts() ) : the_post(); ?>
 

@@ -6,6 +6,14 @@
  *
  * @package Pu-ente
  */
+
+	if(is_page_template("page-gallery.php")){ 
+		global $post;
+		$category = get_post( $post )->post_name;
+	} else if(!is_front_page()){ 
+		$category = get_the_category();
+		$category = $category[0]->cat_name;
+	}
 ?>
 	</div><!-- #content -->
 	<div class="overlay" id="overlay" style="visibility:hidden"></div>
@@ -14,7 +22,7 @@
 		<ul id="sub-sections">
 			<li data-href="/a/">a</li>
 			<li data-href="/z/">z</li>
-			<li data-href="/pu-ente/">pu-ente</li>
+			<li data-section="<?php echo $category; ?>" data-href="/pu-ente/">pu-ente</li>
 		</ul>
 		<ul id="sub-languages">
 			<?php 

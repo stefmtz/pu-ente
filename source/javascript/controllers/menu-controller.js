@@ -11,14 +11,16 @@ var projectView	= require('../views/project-view'),
 var MenuController = function () {
 
 	var prod = "/_test";
-	//var prod = "";
-	var cat, lang;
+	var prod = "";
+	var cat, lang, lastPage;
 
-	var init = function () {
+	var init = function (lp) {
 		console.log('MenuController');
 
-		WPGlobus.language != "es" ? lang = "/"+WPGlobus.language : lang=""; 
+		lang = WPGlobus.language != "es" ? "/"+WPGlobus.language : ""; 
+		lastPage = typeof lp !== 'undefined' ? lp : "/a/";
 
+		console.log("init lastPage="+lastPage);
 		menuView.initSubMenu();
 		_initMainMenu();
 		_initSubMenu();
@@ -27,7 +29,7 @@ var MenuController = function () {
 
 	var _initMainMenu = function(){
 
-		var m = document.getElementById("menu");
+		console.log("_initMainMenu lastPage="+lastPage);
 
 		cat = _getCat();
 
@@ -57,7 +59,7 @@ var MenuController = function () {
 			console.log("crossMenu");
 			document.getElementById("crossMenu").addEventListener("click", function(e){
 				projectView.clearTheInterval();
-				console.log(prod+lang+"/"+cat+"/");
+				console.log("allá vamos-->"+prod+lang+"/"+cat+"/");
 				emitter.emit("requestNewPage", prod+lang+"/"+cat+"/");
 			}, false);
 		}
@@ -81,19 +83,22 @@ var MenuController = function () {
 		overlay.addEventListener("click", function(e){
 			menuView.hideSubMenu(true);
 		});
-
-
 	}
 
 	function _getCat(){
-		var ret = "";
-		
+
+		console.log("getcat lastPage="+lastPage);
 		if(window.location.href.indexOf("/z/")!=-1){
-			ret="z";
-		} else if(window.location.href.indexOf("/a/")!=-1){
-			ret="a";
-		}		
-		return ret;
+			return "z";
+		} else if(window.location.href.indexOf("/a/")!=-1) {
+			return "a";
+		} else if(lastPage.indexOf("/z/") !=-1){
+			return "z";
+		} else if(lastPage.indexOf("/a/") !=-1){
+			return "a";
+		} else {
+			return "a";
+		}
 	}
 
 	return {

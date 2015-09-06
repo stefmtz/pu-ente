@@ -4,9 +4,9 @@ var PageModel = function () {
 
 	var initNewPage = function (newPage, nuevo) {
 		console.log("PageModel init");
-		if (typeof nuevo === "undefined") {
-			nuevo = true;
-		}
+		
+		nuevo = typeof nuevo !== 'undefined' ? nuevo : true;
+
 		if (!newPage){
 			newPage = "";
 		}
