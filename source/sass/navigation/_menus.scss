@@ -119,6 +119,30 @@
 	margin: 70px 70px 0 0;
 }
 
+@media (max-width: 1200px) {
+
+	.square-menu {
+		margin: 70px 0 0 45px;
+	}
+
+	.square-menu.right{
+		margin: 70px 45px 0 0;
+	}
+
+}
+
+@media (max-width: 750px) {
+
+	.square-menu {
+		margin: 70px 0 0 25px;
+	}
+
+	.square-menu.right{
+		margin: 70px 25px 0 0;
+	}
+
+}
+
 .cross-menu {
 	font-weight: bolder;
 	float: left;

@@ -10,7 +10,7 @@ Author: Stef
 		<?php /*if (has_post_thumbnail()):?>
 		<li><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail(); ?></a></li>
 		<?php endif;*/ ?>
-		<li class="project-container">
+		<li class="yarp-project-container">
 					<div class="project">
 						<div class="project-description">
 							<p><?php the_title(); ?></p>

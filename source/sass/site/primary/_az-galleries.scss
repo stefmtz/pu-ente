@@ -49,29 +49,32 @@ body.page-gallery-z {
 @media (max-width: 950px) {
 	.project-container{
 		width: 50%;		
-		padding: 2% 10% 7% 10%;
+		padding: 2% 5% 7% 10%;
+	}
+	.project-container:nth-of-type(2n){
+		padding: 2% 10% 7% 5%;
 	}
 
 }
 
 @media (max-width: 550px) {
-	.project-container{
+	.project-container, .project-container:nth-of-type(2n){
 		width: 100%;		
-		padding: 2% 25% 18% 25%;
+		padding: 2% 15% 18% 15%;
 	}
 
 }
 
 @media (max-width: 450px) {
-	.project-container{
+	.project-container, .project-container:nth-of-type(2n){
 		padding: 2% 20% 18% 20%;
 	}
 
 }
 
 @media (max-width: 280px) {
-	.project-container{
+	.project-container, .project-container:nth-of-type(2n){
 		padding: 2% 0 18% 0;
-	}
+}
 
 }

@@ -46,6 +46,19 @@ figure{
 	height: 100%;
 }
 
+@media (max-width: 1600px) {
+	.single-post .site-content{
+		width: 80%;
+	}
+}
+
+@media (max-width: 875px) {
+	.single-post .site-content{
+		width: 70%;
+	}
+}
+
+
 /* pagination menu */
 
 #pagination-menu {
@@ -101,16 +114,22 @@ figure{
 	list-style:none;
 }
 
-.yarpp-related .project-container{
+.yarp-project-container{
+	color: #FFFFFF;
+	width: 33.3%;
+	float: left;
+	list-style-type: none;
+	padding: 2% 6% 4% 6%;
 	margin: 0;
 	font-size: 100%;
 }
 
+
 @media (max-width: 950px) {
-	.yarpp-related .project-container{
+	.yarp-project-container{
 		width: 33.33%;	
-		font-size: 75%;
-		margin: 2% 6% 4% 6%;	
+		font-size: 85%;
+		margin: 0;
 	}
 
 }
