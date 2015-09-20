@@ -41,3 +41,26 @@ body{
 .fade-in {
 	opacity: 1 !important; 
 }
+
+@media (max-width: 950px) {
+	.fade-out-page {
+		padding-top: 80px;
+		margin-bottom: 80px;
+	}
+
+	.fade-in-page {
+		padding-top: 180px;
+	}
+}
+
+@media (max-width: 400px) {
+	.fade-out-page {
+		padding-top: 40px;
+		margin-bottom: 40px;
+	}
+
+	.fade-in-page {
+		padding-top: 140px;
+	}
+
+}

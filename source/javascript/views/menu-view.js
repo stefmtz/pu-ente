@@ -23,8 +23,7 @@ var MenuView = function () {
 		s.style.visibility = "visible";
 
 		o.className = o.className + " fade-in";
-		s.className = s.className + " fade-in"; 	
-
+		s.className = s.className + " fade-in";
 	}
 
 	var hideSubMenu = function (visibilityHidden) {
@@ -32,7 +31,7 @@ var MenuView = function () {
 		if(visibilityHidden===true){
 			o.className = o.className.replace("fade-in", "fade-out");
 			o.style.visibility = "hidden";
-			s.style.visibility = "hidden";	
+			s.style.visibility = "hidden";
 		}
 	}
 

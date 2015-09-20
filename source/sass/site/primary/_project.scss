@@ -1,7 +1,6 @@
 body.single-post, body.page-template-page-puente{
 	background-color: #1B1B1B;
 	color: #FFFFFF;
-	/* font-size: 0.875em; */
 }
 
 .entry-text {
@@ -55,6 +54,18 @@ figure{
 @media (max-width: 875px) {
 	.single-post .site-content{
 		width: 70%;
+	}
+}
+
+
+@media (max-width: 850px) {
+	#project-title {
+		float: none;
+	}
+	#project-text {
+		float: none;
+		width: 100%;
+		margin-top: 5%;
 	}
 }
 
