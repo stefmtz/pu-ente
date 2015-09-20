@@ -1,0 +1,108 @@
+/* pu-ente Main Menu - top*/
+.main-menu {
+	position: fixed;
+	width: 100%;
+	z-index: 99;
+}
+
+.square-menu {
+	width: 25px;
+	height: 25px;
+	background-color: #000000;
+	float: left;
+	margin: 70px 0 0 70px;
+	cursor: pointer;
+}
+
+.square-menu.right {
+	float: right;
+	margin: 70px 70px 0 0;
+}
+
+
+
+.cross-menu {
+	font-weight: bolder;
+	float: left;
+	margin: 60px 0 0 70px;
+	cursor: pointer;
+}
+
+.cross-menu.right {
+	float: right;
+	margin: 60px 70px 0 0;
+}
+
+.cross-menu:before {
+	content: '\00d7'; 
+	color: #000000;
+	font-family: 'Graphie-Bold';
+	font-size: 40px;
+}
+
+@media (max-width: 1200px) {
+
+	.square-menu {
+		margin: 70px 0 0 45px;
+	}
+
+	.square-menu.right{
+		margin: 70px 45px 0 0;
+	}
+
+	.cross-menu {
+		margin: 60px 0 0 45px;
+	}
+
+	.cross-menu.right{
+		margin: 60px 45px 0 0;
+	}
+
+}
+
+@media (max-width: 750px) {
+
+	.square-menu {
+		margin: 70px 0 0 25px;
+	}
+
+	.square-menu.right{
+		margin: 70px 25px 0 0;
+	}
+
+	.cross-menu {
+		margin: 60px 0 0 25px;
+	}
+
+	.cross-menu.right{
+		margin: 60px 25px 0 0;
+	}
+
+}
+
+@media (max-width: 400px) {
+
+	.square-menu {
+		margin: 50px 0 0 15px;
+	}
+
+	.square-menu.right{
+		margin: 50px 15px 0 0;
+	}
+
+	.cross-menu {
+		margin: 40px 0 0 15px;
+	}
+
+	.cross-menu.right{
+		margin: 40px 15px 0 0;
+	}
+
+}
+.single-post .square-menu, .page-template-page-puente .square-menu {
+	background-color: #FFFFFF;
+}
+
+.single-post .cross-menu:before, .page-template-page-puente .cross-menu:before{
+	color: #FFFFFF;
+}
