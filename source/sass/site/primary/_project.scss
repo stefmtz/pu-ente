@@ -57,7 +57,6 @@ figure{
 	}
 }
 
-
 @media (max-width: 850px) {
 	#project-title {
 		float: none;
@@ -68,7 +67,6 @@ figure{
 		margin-top: 5%;
 	}
 }
-
 
 /* pagination menu */
 
@@ -130,17 +128,36 @@ figure{
 	width: 33.3%;
 	float: left;
 	list-style-type: none;
-	padding: 2% 6% 4% 6%;
+	padding: 2% 6% 4% 0;
 	margin: 0;
-	font-size: 100%;
+	font-size: 1em;
+}
+
+.yarp-project-container:nth-of-type(2){
+	padding: 2% 3% 4% 3%;
+}
+
+.yarp-project-container:nth-of-type(3){
+	padding: 2% 0 4% 6%;
 }
 
 
 @media (max-width: 950px) {
 	.yarp-project-container{
-		width: 33.33%;	
-		font-size: 85%;
-		margin: 0;
+		font-size: 0.875em;
+	}
+}
+
+@media (max-width: 850px) {
+	.yarp-project-container{
+		width: 50%;
+		padding: 2% 3% 4% 0;
+	}
+	.yarp-project-container:nth-of-type(2){
+		padding: 2% 0 4% 3%;
+	}
+	.yarp-project-container:nth-of-type(3){
+		display: none;
 	}
 
 }
