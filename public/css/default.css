@@ -32,6 +32,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	12.1 Captions
 	12.2 Galleries
 --------------------------------------------------------------*/
+/* pu-ente colors*/
 /*--------------------------------------------------------------
 1.0 Normalize
 --------------------------------------------------------------*/
@@ -191,11 +192,8 @@ td, th {
 
 body, button, input, select, textarea {
   color: #404040;
-  font-family: 'Graphie-Regular', sans-serif;
-  font-size: 16px;
-  font-size: 1rem;
   line-height: 1.5;
-  font: normal 400 1.313em 'Graphie-Regular', sans-serif; }
+  font: normal 400 1em 'Graphie-Regular', sans-serif; }
 
 h1, h2, h3, h4, h5, h6 {
   clear: both; }
@@ -210,7 +208,7 @@ blockquote {
   margin: 0 1.5em; }
 
 address {
-  margin: 0 0 1.5em; }
+  margin: 0; }
 
 pre {
   background: #eee;
@@ -265,23 +263,24 @@ hr {
   margin-bottom: 1.5em; }
 
 ul, ol {
-  margin: 0 0 1.5em 3em; }
+  margin: 0;
+  padding: 0; }
 
 ul {
-  list-style: disc; }
+  list-style: none; }
 
 ol {
-  list-style: decimal; }
+  list-style: none; }
 
 li > ul, li > ol {
   margin-bottom: 0;
-  margin-left: 1.5em; }
+  margin-left: 0; }
 
 dt {
   font-weight: bold; }
 
 dd {
-  margin: 0 1.5em 1.5em; }
+  margin: 0 0 0; }
 
 img {
   height: auto;
@@ -349,6 +348,9 @@ a {
 /*--------------------------------------------------------------
 5.2 Menus
 --------------------------------------------------------------*/
+/*--------------------------------------------------------------
+5.2.1 Base
+--------------------------------------------------------------*/
 .main-navigation {
   clear: both;
   display: block;
@@ -402,7 +404,10 @@ a {
   text-align: right;
   width: 50%; }
 
-/* pu-ente menu */
+/*--------------------------------------------------------------
+5.2.2 Main Menu
+--------------------------------------------------------------*/
+/* pu-ente Main Menu - top*/
 .main-menu {
   position: fixed;
   width: 100%;
@@ -436,16 +441,125 @@ a {
   font-family: 'Graphie-Bold';
   font-size: 40px; }
 
-.single-post .square-menu, .page-template-page-contact .square-menu {
+@media (max-width: 1200px) {
+  .square-menu {
+    margin: 70px 0 0 45px; }
+  .square-menu.right {
+    margin: 70px 45px 0 0; }
+  .cross-menu {
+    margin: 60px 0 0 45px; }
+  .cross-menu.right {
+    margin: 60px 45px 0 0; } }
+
+@media (max-width: 750px) {
+  .square-menu {
+    margin: 70px 0 0 25px; }
+  .square-menu.right {
+    margin: 70px 25px 0 0; }
+  .cross-menu {
+    margin: 60px 0 0 25px; }
+  .cross-menu.right {
+    margin: 60px 25px 0 0; } }
+
+@media (max-width: 400px) {
+  .square-menu {
+    margin: 50px 0 0 15px; }
+  .square-menu.right {
+    margin: 50px 15px 0 0; }
+  .cross-menu {
+    margin: 40px 0 0 15px; }
+  .cross-menu.right {
+    margin: 40px 15px 0 0; } }
+
+.single-post .square-menu, .page-template-page-puente .square-menu {
   background-color: #FFFFFF; }
 
-.single-post .cross-menu:before, .page-template-page-contact .cross-menu:before {
+.single-post .cross-menu:before, .page-template-page-puente .cross-menu:before {
   color: #FFFFFF; }
 
-/* post navigation*/
+/*--------------------------------------------------------------
+5.2.3 Projects Menu
+--------------------------------------------------------------*/
+/* bottom navigation menu - projects */
 .pag {
   float: left;
   width: 100%; }
+
+/*--------------------------------------------------------------
+5.2.4 Sub Menu
+--------------------------------------------------------------*/
+/* sub menu - languages, etc*/
+.overlay {
+  transition: all 1s ease-in-out 0.5s;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: 99;
+  opacity: 0;
+  cursor: pointer;
+  width: 100%;
+  height: 120%; }
+
+.submenu {
+  transition: all 1s ease-in-out 0.5s;
+  position: fixed;
+  top: 25%;
+  margin-left: 70px;
+  z-index: 100;
+  width: 300px;
+  height: 300px;
+  opacity: 0; }
+
+.submenu li:hover {
+  cursor: pointer; }
+
+.submenu > ul {
+  position: absolute;
+  top: 11%;
+  left: 11%; }
+
+.submenu a {
+  text-decoration: none; }
+
+#sub-languages {
+  top: auto;
+  bottom: 11%; }
+
+.category-z .overlay {
+  background-color: #323232; }
+
+.category-z .submenu {
+  background-color: #FFFFFF;
+  color: #1B1B1B; }
+
+.category-z .submenu a {
+  color: #1B1B1B; }
+
+.category-a .overlay {
+  background-color: #FFFFFF; }
+
+.category-a .submenu {
+  background-color: #323232;
+  color: #FFFFFF; }
+
+.category-a .submenu a {
+  color: #FFFFFF; }
+
+@media (max-width: 600px) {
+  .submenu {
+    font-size: 0.875em;
+    top: 15%;
+    margin-left: 25px;
+    width: 250px;
+    height: 250px; } }
+
+/* WPGlobuss menu*/
+.menu-item-type-post_type {
+  display: none; }
+
+.menu_item_wpglobus_menu_switch .sub-menu {
+  display: block !important; }
 
 /*--------------------------------------------------------------
 6.0 Accessibility
@@ -525,7 +639,7 @@ body {
   transition: opacity 0.5s ease-in-out 1s;
   transition: background-color 0.5s ease-in-out 0s; }
 
-#content {
+.site-content {
   max-width: 1400px;
   width: 90%;
   margin: 0 auto;
@@ -557,6 +671,20 @@ body {
 .fade-in {
   opacity: 1 !important; }
 
+@media (max-width: 950px) {
+  .fade-out-page {
+    padding-top: 80px;
+    margin-bottom: 80px; }
+  .fade-in-page {
+    padding-top: 180px; } }
+
+@media (max-width: 400px) {
+  .fade-out-page {
+    padding-top: 40px;
+    margin-bottom: 40px; }
+  .fade-in-page {
+    padding-top: 140px; } }
+
 /*--------------------------------------------------------------
 10.1 Posts and pages
 --------------------------------------------------------------*/
@@ -578,6 +706,9 @@ body {
 .page-links {
   clear: both;
   margin: 0 0 1.5em; }
+
+.entry-content {
+  font-size: 1em; }
 
 /*--------------------------------------------------------------
 10.1.1 Home
@@ -614,15 +745,11 @@ body.home {
   float: left;
   transition: background-color 0.5s ease-in-out 0, color 0.5s ease-in-out 0s; }
 
-.mid {
+.square.uno {
   background-color: #323232;
   color: #FFFFFF; }
 
-.dark {
-  background-color: #1B1B1B;
-  color: #FFFFFF; }
-
-.light {
+.square.dos {
   background-color: #FFFFFF;
   color: #323232; }
 
@@ -652,13 +779,24 @@ body.home {
     margin-left: -331px; } }
 
 @media (max-width: 950px) {
-  .square:nth-of-type(2) {
-    display: none; }
+  /* primera etapa movil */
+  body.home {
+    background-color: #FFFFFF; }
+  .square div {
+    opacity: 1; }
+  .square.uno {
+    background-color: #1B1B1B;
+    color: #FFFFFF; }
+  .square.dos {
+    background-color: #323232;
+    color: #FFFFFF; }
   .container-home {
+    top: 10%;
     width: 414px;
     height: 414px;
-    margin-top: -207px;
-    margin-left: -207px; }
+    margin-top: 0;
+    margin-left: -207px;
+    margin-bottom: 470px; }
   .square {
     width: 100%; } }
 
@@ -666,23 +804,22 @@ body.home {
   .container-home {
     width: 265px;
     height: 265px;
-    margin-top: -132.5px;
-    margin-left: -132.5px; } }
+    margin-left: -132.5px;
+    margin-bottom: 300px; } }
 
 /*--------------------------------------------------------------
 10.1.2 A-Z Galleries
 --------------------------------------------------------------*/
-body.page-gallery-category-a {
+body.page-gallery-a {
   background-color: #FFFFFF;
   cursor: default; }
 
-body.page-gallery-category-z {
+body.page-gallery-z {
   background-color: #323232; }
 
 .project-container {
   color: #FFFFFF;
-  font-size: 0.75em;
-  width: 33.33%;
+  width: 33.3%;
   float: left;
   list-style-type: none;
   padding: 2% 6% 4% 6%; }
@@ -715,31 +852,32 @@ body.page-gallery-category-z {
 @media (max-width: 950px) {
   .project-container {
     width: 50%;
-    padding: 2% 10% 7% 10%; } }
+    padding: 2% 5% 7% 10%; }
+  .project-container:nth-of-type(2n) {
+    padding: 2% 10% 7% 5%; } }
 
 @media (max-width: 550px) {
-  .project-container {
+  .project-container, .project-container:nth-of-type(2n) {
     width: 100%;
-    padding: 2% 25% 18% 25%; } }
+    padding: 2% 15% 18% 15%; } }
 
 @media (max-width: 450px) {
-  .project-container {
+  .project-container, .project-container:nth-of-type(2n) {
     padding: 2% 20% 18% 20%; } }
 
 @media (max-width: 280px) {
-  .project-container {
+  .project-container, .project-container:nth-of-type(2n) {
     padding: 2% 0 18% 0; } }
 
 /*--------------------------------------------------------------
 10.1.3 Projects
 --------------------------------------------------------------*/
-body.single-post, body.page-template-page-contact {
+body.single-post, body.page-template-page-puente {
   background-color: #1B1B1B;
-  color: #FFFFFF;
-  font-size: 0.875em; }
+  color: #FFFFFF; }
 
 .entry-text {
-  margin-bottom: 6%; }
+  margin: 2% 0 8% 0; }
 
 .post img {
   margin: 0 0 2% 0; }
@@ -760,11 +898,70 @@ body.single-post, body.page-template-page-contact {
 figure {
   margin: 0; }
 
+.videoWrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  /* 16:9 */
+  padding-top: 25px;
+  height: 0; }
+
+.videoWrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
+
+@media (max-width: 1600px) {
+  .single-post .site-content {
+    width: 80%; } }
+
+@media (max-width: 875px) {
+  .single-post .site-content {
+    width: 70%; } }
+
+@media (max-width: 850px) {
+  #project-title {
+    float: none; }
+  #project-text {
+    float: none;
+    width: 100%;
+    margin-top: 5%; } }
+
+/* pagination menu */
+#pagination-menu {
+  margin-bottom: 25%; }
+
+#pagination-menu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+#pagination-menu ul li {
+  width: 33%;
+  height: 20px;
+  float: left;
+  display: block; }
+
+#pagination-menu ul li div {
+  background-color: white;
+  cursor: pointer;
+  width: 20px;
+  height: 20px; }
+
+#square-next {
+  float: left; }
+
+#square-previous {
+  float: right; }
+
+#scroll-up {
+  margin: 0 auto; }
+
 /* related posts */
 #related-posts {
-  opacity: 0;
-  padding-top: 2%;
-  transition: all 0.5s ease-out 0s; }
+  transition: all 0.5s ease-out 0s;
+  opacity: 0; }
 
 .yarpp-related {
   margin: 0 !important; }
@@ -774,32 +971,141 @@ figure {
   padding: 0;
   list-style: none; }
 
-.yarpp-related .project-container {
+.yarp-project-container {
+  color: #FFFFFF;
+  width: 33.3%;
+  float: left;
+  list-style-type: none;
+  padding: 2% 6% 4% 0;
   margin: 0;
-  font-size: 100%; }
+  font-size: 1em; }
+
+.yarp-project-container:nth-of-type(2) {
+  padding: 2% 3% 4% 3%; }
+
+.yarp-project-container:nth-of-type(3) {
+  padding: 2% 0 4% 6%; }
 
 @media (max-width: 950px) {
-  .yarpp-related .project-container {
-    width: 33.33%;
-    font-size: 75%;
-    padding: 2% 6% 4% 6%; } }
+  .yarp-project-container {
+    font-size: 0.875em; } }
+
+@media (max-width: 850px) {
+  .yarp-project-container {
+    width: 50%;
+    padding: 2% 3% 4% 0; }
+  .yarp-project-container:nth-of-type(2) {
+    padding: 2% 0 4% 3%; }
+  .yarp-project-container:nth-of-type(3) {
+    display: none; } }
 
 /*--------------------------------------------------------------
-10.1.4 Contact
+10.1.4 Pu-ente
 --------------------------------------------------------------*/
-.page-contact .entry-header {
+.page-puente .entry-header {
   display: none; }
 
-.page-contact .entry-content div {
-  width: 22%;
+.page-puente a {
+  text-decoration: none;
+  color: #FFFFFF; }
+
+.page-puente a:hover {
+  text-decoration: underline; }
+
+.page-puente .puente-title {
+  width: 100%;
   float: left;
-  margin-right: 7%; }
+  margin-bottom: 50px; }
 
-.page-contact .entry-content div:nth-of-type(2) {
-  width: 32%; }
+.page-puente p {
+  margin-bottom: 1.5em;
+  height: auto; }
 
-.page-contact .entry-content div:nth-of-type(3) {
-  width: 25%; }
+.page-puente .entry-content .puente-content {
+  width: 26%;
+  float: left;
+  margin-right: 10%;
+  word-wrap: break-word; }
+
+.page-puente .entry-content .puente-content:nth-of-type(3) {
+  width: 22%; }
+
+.page-puente .entry-content .puente-content:nth-of-type(4) {
+  width: 11%; }
+
+.page-puente .entry-content .puente-content:nth-of-type(5) {
+  width: 11%;
+  margin-right: 0; }
+
+@media (max-width: 1680px) {
+  .page-template-page-puente .site-content {
+    width: 80%; } }
+
+@media (max-width: 1580px) {
+  .page-puente .entry-content .puente-content {
+    width: 29%;
+    margin-right: 7%; }
+  .page-puente .entry-content .puente-content:nth-of-type(3) {
+    width: 25%; }
+  .page-puente .entry-content .puente-content:nth-of-type(4) {
+    width: 14%; }
+  .page-puente .entry-content .puente-content:nth-of-type(5) {
+    width: 11%;
+    margin-right: 0; } }
+
+@media (max-width: 1385px) {
+  .page-puente .entry-content .puente-content {
+    width: 31%;
+    margin-right: 5%; }
+  .page-puente .entry-content .puente-content:nth-of-type(3) {
+    width: 25%; }
+  .page-puente .entry-content .puente-content:nth-of-type(4) {
+    width: 16%; }
+  .page-puente .entry-content .puente-content:nth-of-type(5) {
+    width: 13%; } }
+
+@media (max-width: 1180px) {
+  .page-puente .entry-content .puente-content {
+    width: 33%;
+    margin-right: 3%; }
+  .page-puente .entry-content .puente-content:nth-of-type(3) {
+    width: 25%; }
+  .page-puente .entry-content .puente-content:nth-of-type(4) {
+    width: 18%; }
+  .page-puente .entry-content .puente-content:nth-of-type(5) {
+    width: 15%; } }
+
+@media (max-width: 980px) {
+  .page-puente .entry-content .puente-content {
+    width: 45%;
+    height: 250px;
+    margin-right: 10%; }
+  .page-puente .entry-content .puente-content:nth-of-type(3) {
+    width: 45%;
+    margin-right: 0; }
+  .page-puente .entry-content .puente-content:nth-of-type(4) {
+    width: 45%; }
+  .page-puente .entry-content .puente-content:nth-of-type(5) {
+    width: 45%; } }
+
+@media (max-width: 780px) {
+  .page-puente .entry-content .puente-content {
+    height: 300px; }
+  .page-puente .entry-content .puente-content:nth-of-type(4), .page-puente .entry-content .puente-content:nth-of-type(5) {
+    height: 150px; } }
+
+@media (max-width: 560px) {
+  .page-puente .entry-content .puente-content, .page-puente .entry-content .puente-content:nth-of-type(3), .page-puente .entry-content .puente-content:nth-of-type(4), .page-puente .entry-content .puente-content:nth-of-type(5) {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px; }
+  .page-template-page-puente .site-content {
+    width: 71%; } }
+
+.puente-img {
+  width: 100%;
+  height: 100%;
+  margin-top: 22%; }
 
 /*--------------------------------------------------------------
 10.2 Asides
@@ -861,7 +1167,6 @@ embed, iframe, object {
 12.2 Galleries
 --------------------------------------------------------------*/
 .gallery {
-  /* margin-bottom: 1.5em; */
   position: relative;
   padding-bottom: 68%; }
 
