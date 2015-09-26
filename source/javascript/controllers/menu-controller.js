@@ -11,7 +11,7 @@ var projectView	= require('../views/project-view'),
 var MenuController = function () {
 
 	var prod = "/_test";
-	//var prod = "";
+	var prod = "";
 	var cat, lang, lastPage;
 
 	var init = function (lp) {
@@ -19,7 +19,6 @@ var MenuController = function () {
 		lang = WPGlobus.language != "es" ? "/"+WPGlobus.language : ""; 
 		lastPage = typeof lp !== 'undefined' ? lp : "/a/";
 
-		console.log("init lastPage="+lastPage);
 		menuView.initSubMenu();
 		_initMainMenu();
 		_initSubMenu();
@@ -55,7 +54,6 @@ var MenuController = function () {
 		if(document.getElementById("crossMenu")!== null){
 			document.getElementById("crossMenu").addEventListener("click", function(e){
 				projectView.clearTheInterval();
-				console.log("allá vamos-->"+prod+lang+"/"+cat+"/");
 				emitter.emit("requestNewPage", prod+lang+"/"+cat+"/");
 			}, false);
 		}
@@ -83,7 +81,6 @@ var MenuController = function () {
 
 	function _getCat(){
 
-		console.log("getcat lastPage="+lastPage);
 		if(window.location.href.indexOf("/z/")!=-1){
 			return "z";
 		} else if(window.location.href.indexOf("/a/")!=-1) {

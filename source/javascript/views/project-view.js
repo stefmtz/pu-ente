@@ -22,7 +22,7 @@ var ProjectView = function () {
 
 		//init the galleries
 		var galleries = document.getElementsByClassName("gallery");
-
+		
 		for (var i = 0; i < galleries.length; i++) {
 			_initGallery(galleries[i]);
 		}
@@ -38,17 +38,17 @@ var ProjectView = function () {
 		}
 	};
 
-	var _initGallery = function(gallery){		
-		var gallery = new Gallery(gallery);
+	var _initGallery = function(galleryHTML){
+		var gallery = new Gallery(galleryHTML);
 		gallery.init();
 	};
 
-	function Gallery(gallery){
+	function Gallery(galleryHTML){
 
-		this.photos = gallery.getElementsByClassName("gallery-item");
+		this.photos = galleryHTML.getElementsByClassName("gallery-item");
 		this.currentPhoto = this.photos.length-1;;
-		this.DOMObject = gallery;
-		this.time = gallery.getAttribute("data-time");
+		this.DOMObject = galleryHTML;
+		this.time = galleryHTML.getAttribute("data-time");
 
 		this.time == undefined ? this.time = 2000 : this.time = this.time*1000;
 
@@ -64,7 +64,6 @@ var ProjectView = function () {
 			if (this.currentPhoto!=0){
 				this.photos[this.currentPhoto].className = this.photos[this.currentPhoto].className + " fade-out";
 			} else {
-				//STEF MEJORAR: se puede mejorar haciendo fade-in primero de la primera foto y luego del resto 	
 				for (var i = 0; i < this.photos.length; i++) {
 					this.photos[i].className = this.photos[i].className.replace(" fade-out", "");
 				};
