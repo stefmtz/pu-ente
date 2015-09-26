@@ -1169,8 +1169,7 @@ embed, iframe, object {
 12.2 Galleries
 --------------------------------------------------------------*/
 .gallery {
-  position: relative;
-  padding-bottom: 68%; }
+  position: relative; }
 
 .gallery-item {
   display: inline-block;
@@ -1196,6 +1195,9 @@ embed, iframe, object {
     max-width: 12.5%; }
   .gallery-columns-9 .gallery-item {
     max-width: 11.11%; }
+
+.gallery-item:last-child {
+  position: relative; }
 
 .gallery-caption {
   display: block; }

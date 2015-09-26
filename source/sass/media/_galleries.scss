@@ -1,6 +1,5 @@
 .gallery {
 	position: relative;
-	padding-bottom:68%;
 }
 
 .gallery-item {
@@ -45,6 +44,8 @@
 		max-width: 11.11%;
 	}
 }
+
+.gallery-item:last-child{ position: relative; }
 
 .gallery-caption {
 	display: block;
