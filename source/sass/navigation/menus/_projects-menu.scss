@@ -1,6 +1,44 @@
 
 /* bottom navigation menu - projects */
 
+/* pagination menu */
+
+#pagination-menu {
+	margin-bottom: 25%;
+}
+
+#pagination-menu ul{
+	margin: 0;
+	padding: 0;
+	list-style:none;
+}
+
+#pagination-menu ul li{
+	width:33%;
+	height:20px;
+	float: left;
+	display: block;
+}
+
+#pagination-menu ul li div{
+	background-color:white;
+	cursor: pointer;
+	width:20px;
+	height:20px;
+}
+
+#square-next {
+	float:left;
+}
+
+#square-previous {
+	float:right;
+}
+
+#scroll-up{
+	margin: 0 auto;
+}
+
 .pag {
 	float: left;
 	width: 100%;
