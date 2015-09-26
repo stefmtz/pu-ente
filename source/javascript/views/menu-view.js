@@ -10,11 +10,8 @@ var MenuView = function () {
 
 	var initSubMenu = function () {
 		
-		console.log("initSubMenu")
 		o = document.getElementById("overlay");
-		s = document.getElementById("submenu");
-
-						
+		s = document.getElementById("submenu");						
 	};
 
 	var showSubMenu = function () {

@@ -3,8 +3,7 @@
 var PageModel = function () {
 
 	var initNewPage = function (newPage, nuevo) {
-		console.log("PageModel init");
-		
+
 		nuevo = typeof nuevo !== 'undefined' ? nuevo : true;
 
 		if (!newPage){
@@ -21,7 +20,6 @@ var PageModel = function () {
 
 	var _requestPage = function requestPage(href, nuevo){
 		if (window.XMLHttpRequest){
-			console.log("_requestPage");
 			var req = new XMLHttpRequest();
 			req.open("GET", href, true);
 			req.onload = function(e){
@@ -34,12 +32,12 @@ var PageModel = function () {
 						emitter.emit("loadNewPage", req.responseText);
 					}, 500);													    
 			    } else {			    
-			      console.error(req.statusText);			    
+			      //error console.error(req.statusText);			    
 			    }
 			  }
 			};
 			req.onerror = function (e) {
-			  console.error(req.statusText);
+			  // error console.error(req.statusText);
 			};
 			req.send(null);
 		} else {

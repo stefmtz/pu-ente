@@ -7,8 +7,6 @@ var HomepageView = function () {
 	
 	var init = function (){
 
-		console.log('HomepageView init');
-
 		var s = document.getElementsByClassName("square");
 
 		for (var i = 0; i < s.length; i++) {
@@ -31,9 +29,7 @@ var HomepageView = function () {
 
 	var _initBehavior = function(e){
 		e.stopPropagation();
-
-		console.log("click");
-		
+	
 		var light = document.getElementsByClassName("light");
 		var mid = document.getElementsByClassName("mid");
 		var dark = document.getElementsByClassName("dark");

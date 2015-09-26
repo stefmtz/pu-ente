@@ -17,7 +17,6 @@ var PageController = function() {
 	var lastPage;
 
 	var init = function () {
-		console.log('PageController');
 
 		_fadeInContent();
 
@@ -90,7 +89,6 @@ var PageController = function() {
 	};
 
 	var _loadNewPage = function (data){
-		console.log("_loadNewPage");
 
 		var parser = new DOMParser();
 		var doc = parser.parseFromString(data, "text/html");

@@ -42,7 +42,7 @@ gulp.task('scripts', function() {
       .pipe(jshint())
       .pipe(jshint.reporter('default'))
       .pipe(browserify(config))
-      //.pipe(uglify())
+      .pipe(uglify())
       .pipe(gulp.dest('./public/js/'))
     ;
 });

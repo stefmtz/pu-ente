@@ -15,7 +15,6 @@ var MenuController = function () {
 	var cat, lang, lastPage;
 
 	var init = function (lp) {
-		console.log('MenuController');
 
 		lang = WPGlobus.language != "es" ? "/"+WPGlobus.language : ""; 
 		lastPage = typeof lp !== 'undefined' ? lp : "/a/";
@@ -28,8 +27,6 @@ var MenuController = function () {
 	};
 
 	var _initMainMenu = function(){
-
-		console.log("_initMainMenu lastPage="+lastPage);
 
 		cat = _getCat();
 
@@ -56,7 +53,6 @@ var MenuController = function () {
 		}	
 
 		if(document.getElementById("crossMenu")!== null){
-			console.log("crossMenu");
 			document.getElementById("crossMenu").addEventListener("click", function(e){
 				projectView.clearTheInterval();
 				console.log("allá vamos-->"+prod+lang+"/"+cat+"/");
