@@ -11,7 +11,7 @@ var projectView	= require('../views/project-view'),
 var MenuController = function () {
 
 	var prod = "/_test";
-	var prod = "";
+	//var prod = "";
 	var cat, lang, lastPage;
 
 	var init = function (lp) {

@@ -674,18 +674,12 @@ body {
   max-width: 1400px;
   width: 90%;
   margin: 0 auto;
-  transition: all 1s ease-in-out 0s; }
+  transition: all 0.75s ease-out 0s; }
 
 .content-area {
-  transition: all 1s ease-in-out 0s;
+  transition: all 0.75s ease-out 0s;
   padding-top: 300px;
   opacity: 1; }
-
-.preload * {
-  -webkit-transition: none !important;
-  -moz-transition: none !important;
-  -ms-transition: none !important;
-  -o-transition: none !important; }
 
 .fade-out-page {
   opacity: 0;
