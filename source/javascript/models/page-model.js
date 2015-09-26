@@ -30,8 +30,9 @@ var PageModel = function () {
 			    	if (nuevo==true){
 			    		history.pushState(href, "", href);	
 			    	}
-			    	
-					emitter.emit("loadNewPage", req.responseText);								    
+			    	setTimeout(function(){
+						emitter.emit("loadNewPage", req.responseText);
+					}, 500);													    
 			    } else {			    
 			      console.error(req.statusText);			    
 			    }
