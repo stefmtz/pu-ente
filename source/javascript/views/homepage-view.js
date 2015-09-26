@@ -17,11 +17,35 @@ var HomepageView = function () {
 				emitter.emit("homeRequestNewPage", e);
 			}); 
 		}
+
+		document.body.addEventListener("click", _initBehavior, false);
 	};
 
 	var fadeOut = function(){
 		document.getElementsByClassName("container-home")[0].className += " fade-out-home";
 	};
+
+	var _changeColor = function(el,o,n){
+		el.className = el.className.replace(o,n);
+	}
+
+	var _initBehavior = function(e){
+		e.stopPropagation();
+
+		console.log("click");
+		
+		var light = document.getElementsByClassName("light");
+		var mid = document.getElementsByClassName("mid");
+		var dark = document.getElementsByClassName("dark");
+		
+		light = light[0];
+		mid = mid[0];
+		dark = dark[0];
+		
+		_changeColor(dark, "dark", "mid");
+		_changeColor(mid, "mid", "light");
+		_changeColor(light, "light", "dark");				
+	}	
 
 	return {
 		init: init,

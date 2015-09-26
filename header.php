@@ -29,7 +29,7 @@
 				$category = $category[0]->cat_name;
 				body_class("category-".$category); 
 			} else {
-				body_class();
+				body_class("dark");
 			}
 		?>
 >
