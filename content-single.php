@@ -38,14 +38,20 @@
 				<li>
 					<?php 
 						$next_post = get_next_post(true, '', 'category');
-						if ( is_a( $next_post , 'WP_Post' ) ) { ?>
-						  	<div id="square-next" data-href="<?php echo get_permalink( $next_post->ID ); ?>" class="clickable-square">
-						  		<svg style='width: 100%; height: 100%;'>
+						if ( is_a( $next_post , 'WP_Post' ) ) { 
+							$next_post = $next_post->ID;
+						} else { 
+							$category = get_the_category();
+							$args = array( 'numberposts' => 1, 'category' => $category[0]->cat_ID, 'order' => 'ASC' );
+							$post = get_posts( $args );
+							$next_post = $post[0]->ID;
+						} 
+					?>
+						  	<div id="square-next" data-href="<?php echo get_permalink(); ?>" class="clickable-square">
+								<svg style='width: 100%; height: 100%;'>
 	    							<line x1="0%" y1="50%" x2="50%" y2="50%" style="stroke:rgb(0,0,0);stroke-width:5"/>
 								</svg>
-							</div>
-						<?php }
-					?>
+							</div>					
 				</li>
 				<li><div id="scroll-up" class="clickable-square">
 						<svg style='width: 100%; height: 100%;'>
@@ -56,14 +62,20 @@
 				<li>
 					<?php 
 						$previous_post = get_previous_post( true, '', 'category' );
-						if ( is_a( $previous_post , 'WP_Post' ) ) { ?>
-						  	<div id="square-previous" data-href="<?php echo get_permalink( $previous_post->ID ); ?>" class="clickable-square">
-						  		<svg style='width: 100%; height: 100%;'>
-	    							<line x1="50%" y1="50%" x2="100%" y2="50%" style="stroke:rgb(0,0,0);stroke-width:5"/>
-								</svg>
-						  	</div>
-						<?php }
-					?>
+						if ( is_a( $previous_post , 'WP_Post' ) ) { 
+							$previous_post = $previous_post->ID;
+						} else {
+							$category = get_the_category();
+							$args = array( 'numberposts' => 1, 'category' => $category[0]->cat_ID, 'order' => 'DESC' );
+							$post = get_posts( $args );
+							$previous_post = $post[0]->ID;
+						} 
+					?>				
+						  	<div id="square-previous" data-href="<?php echo get_permalink( $previous_post ); ?>" class="clickable-square">						  		
+								<svg style='width: 100%; height: 100%;'>
+		    							<line x1="50%" y1="50%" x2="100%" y2="50%" style="stroke:rgb(0,0,0);stroke-width:5"/>
+									</svg>
+							</div>
 				</li>
 			</ul>				
 		</div>
