@@ -22,7 +22,7 @@
 		<ul id="sub-sections">
 			<li data-href="/a/">a</li>
 			<li data-href="/z/">z</li>
-			<li data-section="<?php echo $category; ?>" data-href="/pu-ente/">pu-ente</li>
+			<li data-section="<?php echo $category; ?>" data-href="/pu-ente/">pu&#8212;ente</li>
 		</ul>
 		<ul id="sub-languages">
 			<?php 

@@ -54,27 +54,37 @@ var ProjectView = function () {
 
 		this.init = function(){
 			_galleries.push(this);
-			var thisGallery = this;
-			this._nIntervId = setInterval(function(){
-				thisGallery._fadePhoto();
-			}, this.time);
+			this._setTime(this.time);
 		};
 
+		this._setTime = function(t){
+			var thisGallery = this;
+			this._nIntervId = setTimeout(function(){
+				thisGallery._fadePhoto();
+			}, t );
+		};
+
+		/*This function is responsible for the fade-outs of each one of the images in the gallery*/
 		this._fadePhoto = function(){
 			if (this.currentPhoto!=0){
 				this.photos[this.currentPhoto].className = this.photos[this.currentPhoto].className + " fade-out";
+				this._setTime(this.time);
+
 			} else {
 				for (var i = 0; i < this.photos.length; i++) {
 					this.photos[i].className = this.photos[i].className.replace(" fade-out", "");
 				};
+				this._setTime(this.time+1000);	
 			}
+
 			this.currentPhoto == 0 ? this.currentPhoto = this.photos.length-1 : this.currentPhoto--;
+			
 		}
 	}
 
 	var clearTheInterval = function(){
 		for (var i = 0; i < _galleries.length; i++) {
-			clearInterval(_galleries[i]._nIntervId);
+			clearTimeout(_galleries[i]._nIntervId);
 		}
 	}
 
