@@ -66,15 +66,24 @@ var ProjectView = function () {
 
 		/*This function is responsible for the fade-outs of each one of the images in the gallery*/
 		this._fadePhoto = function(){
+			clearTimeout(this._timeoutID);
 			if (this.currentPhoto!=0){
 				this.photos[this.currentPhoto].className = this.photos[this.currentPhoto].className + " fade-out";
 				this._setTime(this.time);
 
 			} else {
-				for (var i = 0; i < this.photos.length; i++) {
-					this.photos[i].className = this.photos[i].className.replace(" fade-out", "");
-				};
-				this._setTime(this.time+1000);	
+				this.photos[this.currentPhoto].className = this.photos[this.currentPhoto].className + " fade-out";
+				this.photos[this.photos.length-1].className = this.photos[this.photos.length-1].className.replace(" fade-out", "");
+								
+				var that = this;
+				this._timeoutID = setTimeout(function(){
+					for (var i = 0; i < that.photos.length; i++) {
+						that.photos[i].className = that.photos[i].className.replace(" fade-out", "");
+					};
+				}, 800 );
+				
+				var t = this.time >=1000 ? this.time+1000 : this.time; 
+				this._setTime(t);	
 			}
 
 			this.currentPhoto == 0 ? this.currentPhoto = this.photos.length-1 : this.currentPhoto--;

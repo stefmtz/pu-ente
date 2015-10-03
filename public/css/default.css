@@ -1176,7 +1176,7 @@ embed, iframe, object {
   text-align: center;
   vertical-align: top;
   width: 100%;
-  transition: all 1s ease-in-out 1s;
+  transition: all 1s ease-in-out;
   opacity: 1;
   position: absolute; }
   .gallery-columns-2 .gallery-item {

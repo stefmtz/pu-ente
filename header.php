@@ -14,7 +14,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/public/css/default.css" />  
+<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/public/css/default.css" >  
 <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/public/js/main.js" defer></script>
 <?php wp_head(); ?>
 <script>
