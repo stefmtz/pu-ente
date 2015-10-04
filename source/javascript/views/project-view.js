@@ -12,7 +12,7 @@ var ProjectView = function () {
 
 	var init = function () {
 
-		WPGlobus.language != "es" ? lang = WPGlobus.language : lang=""; 
+		WPGlobus.language != "en" ? lang = WPGlobus.language : lang=""; 
 
 		//init Scroll controller
 		ScrollController.init("related-posts");
