@@ -774,11 +774,11 @@ body, html, p {
 
 .mid {
   background-color: #323232;
-  color: #1B1B1B; }
+  color: #FFFFFF; }
 
 .light {
   background-color: #FFFFFF;
-  color: #323232; }
+  color: #1B1B1B; }
 
 .square div {
   transition: opacity 0.5s ease-in-out 0s;
@@ -814,10 +814,10 @@ body, html, p {
     color: #FFFFFF; }
   .light {
     background-color: #323232;
-    color: #1B1B1B; }
+    color: #FFFFFF; }
   .dark {
     background-color: #FFFFFF;
-    color: #323232; }
+    color: #1B1B1B; }
   .container-home {
     top: 10%;
     width: 414px;

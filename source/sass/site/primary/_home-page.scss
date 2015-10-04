@@ -39,11 +39,11 @@ body, html, p{
 
 .mid{
 	background-color: $color__main-mid;
-	color: $color__main-dark;
+	color: $color__main-light;
 }
 .light{
 	background-color: $color__main-light;
-	color: $color__main-mid;
+	color: $color__main-dark;
 }
 
 .square div{
@@ -93,11 +93,11 @@ body, html, p{
 
 	.light{
 		background-color: $color__main-mid;
-		color: $color__main-dark;
+		color: $color__main-light;
 	}
 	.dark{
 		background-color: $color__main-light;
-		color: $color__main-mid;
+		color: $color__main-dark;
 	}
 
 
