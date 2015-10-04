@@ -7,7 +7,6 @@
  * @package Pu-ente
  */
 ?>
-<!-- content-none.php -->
 <section class="no-results not-found">
 	<header class="page-header">
 		<h1 class="page-title"><?php _e( 'Nothing Found', 'pu-ente' ); ?></h1>

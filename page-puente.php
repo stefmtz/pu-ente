@@ -7,7 +7,6 @@
  */
 
 get_header(); ?>
-<!-- page-puente.php -->
 	<div id="primary" class="content-area page-puente fade-out">
 		<main id="main" class="site-main clear" role="main">
 			<?php while ( have_posts() ) : the_post(); ?>
