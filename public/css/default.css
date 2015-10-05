@@ -1121,6 +1121,16 @@ figure {
   display: block; }
 
 /*--------------------------------------------------------------
+10.4 Ley Cookie
+--------------------------------------------------------------*/
+.wrapperMensajeCookie .textoLegalCookie p {
+  font-size: 0.813em; }
+
+.wrapperMensajeCookie .textoLegalCookie p a {
+  color: #1B1B1B;
+  font-family: 'Graphie-Bold', sans-serif; }
+
+/*--------------------------------------------------------------
 11.0 Infinite scroll
 --------------------------------------------------------------*/
 /* Globally hidden elements when Infinite Scroll is supported and in use. */
