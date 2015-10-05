@@ -12,14 +12,16 @@ get_header(); ?>
 
 
 			<div class="container-home">
-				<div class="square uno mid">
-					<div class="text">
-						<p id="a">a</p>
+				<div id="a"  class="square uno mid">
+					<div  class="text">
+						<p  class="bold">a</p>
+						<p >comissions</p>
 					</div>
 				</div>
-				<div class="square dos light">
-					<div class="text">				
-						<p id="z">z</p>
+				<div id="z" class="square dos light">
+					<div  class="text">				
+						<p  class="bold">z</p>
+						<p >personal</p>
 					</div>
 				</div>
 			</div>

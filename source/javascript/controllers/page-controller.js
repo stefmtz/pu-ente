@@ -32,8 +32,12 @@ var PageController = function() {
 
 		emitter.on("homeRequestNewPage", function(e){
 			HomepageView.fadeOut();
-			_requestNewPage(e.target.id+"/", true);
-			
+			if (e.target.id){
+				_requestNewPage(e.target.id+"/", true);
+			} else {
+				var el = _findAncestor(e.target, "square");
+				_requestNewPage(el.id+"/", true);
+			}
 		});
 
 		window.addEventListener('popstate', function(event) {
@@ -45,6 +49,11 @@ var PageController = function() {
 
 		_setViews();
 	};
+
+	var _findAncestor = function (el, cls) {
+	    while ((el = el.parentElement) && !el.classList.contains(cls));
+	    return el;
+	}
 
 	var _requestNewPage = function(href){
 		setTimeout(function(){
