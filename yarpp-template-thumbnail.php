@@ -13,7 +13,7 @@ Author: Stef
 		<li class="yarp-project-container">
 					<div class="project">
 						<div class="project-description">
-							<p><?php the_title(); ?></p>
+							<p class="bold"><?php the_title(); ?></p>
 							<?php $posttags = get_the_tags();
 								if ($posttags) {
 								  echo "<p>";

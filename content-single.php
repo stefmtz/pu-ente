@@ -16,7 +16,7 @@
 		<?php the_content(); ?>
 		<div class="entry-text">
 			<div id="project-title">
-				<p><strong><?php the_title(); ?></strong>	</p>
+				<p class="bold"><?php the_title(); ?></p>
 				<?php $posttags = get_the_tags();
 					if ($posttags) {
 					  echo "<p>";

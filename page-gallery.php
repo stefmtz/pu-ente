@@ -29,7 +29,7 @@ get_header(); ?>
 				<li class="project-container">
 					<div class="project">
 						<div class="project-description">
-							<p><?php the_title(); ?></p>
+							<p class="bold"><?php the_title(); ?></p>
 							<?php $posttags = get_the_tags();
 								if ($posttags) {
 								  echo "<p>";
@@ -48,8 +48,8 @@ get_header(); ?>
 			<?php endwhile; ?>
 
 			<div id="gallery-pagination">
-				<?php echo get_next_posts_link( '>>', $the_query->max_num_pages ); 
-				previous_posts_link( '<<' );?>
+				<?php /*echo get_next_posts_link( '>>', $the_query->max_num_pages ); 
+				previous_posts_link( '<<' );*/?>
 			</div>
 
 
