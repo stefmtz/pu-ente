@@ -10,14 +10,13 @@ var projectView	= require('../views/project-view'),
 
 var MenuController = function () {
 
-	//var prod = "/_test";
 	var prod = "";
 	var cat, lang, lastPage;
 
 	var init = function (lp) {
 
-		lang = WPGlobus.language != "es" ? "/"+WPGlobus.language : ""; 
-		lastPage = typeof lp !== 'undefined' ? lp : "/a/";
+		lang = WPGlobus.language != "en" ? "/"+WPGlobus.language : ""; 
+		lastPage = typeof lp !== 'undefined' ? lp : "/";
 
 		menuView.initSubMenu();
 		_initMainMenu();
@@ -54,7 +53,7 @@ var MenuController = function () {
 		if(document.getElementById("crossMenu")!== null){
 			document.getElementById("crossMenu").addEventListener("click", function(e){
 				projectView.clearTheInterval();
-				emitter.emit("requestNewPage", prod+lang+"/"+cat+"/");
+				emitter.emit("requestNewPage", prod+lang+"/"+cat);
 			}, false);
 		}
 
@@ -82,15 +81,15 @@ var MenuController = function () {
 	function _getCat(){
 
 		if(window.location.href.indexOf("/z/")!=-1){
-			return "z";
+			return "z/";
 		} else if(window.location.href.indexOf("/a/")!=-1) {
-			return "a";
+			return "a/";
 		} else if(lastPage.indexOf("/z/") !=-1){
-			return "z";
+			return "z/";
 		} else if(lastPage.indexOf("/a/") !=-1){
-			return "a";
+			return "a/";
 		} else {
-			return "a";
+			return "";
 		}
 	}
 
