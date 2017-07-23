@@ -267,6 +267,10 @@ hr {
   height: 1px;
   margin-bottom: 1.5em; }
 
+body, html {
+  width: 100%;
+  height: 100%; }
+
 body, html, p {
   margin: 0;
   padding: 0;
